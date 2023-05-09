@@ -6,13 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script type="text/javascript" src="./script.js"></script>
-    <style src="./style.css"></style>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div id="title band">
-        <div id="test">
+    <div id="title_band">
             <img src="./logoprojetjeunes6_4/logo_full.png">
-        </div>
     </div>
+    <div id="haah">
+            user<br>
+            <input type="text" id="username" name="username"><br>
+            email<br>
+            <input type="text" id="email" name="email" onchange="atCheck()"><br>
+            mdp<br>
+            <input type="password" id="password" name="password"><input type="button" value="reveal" onclick="reveal()"><br>
+            <input type="button" value="login" onclick="login()">
+            <input type="button" value="Add User" onclick="addUser()">
+            <input type="button" value="Modify User" onclick="modUser()">
+
+    </div>
+    <div id="txtHint">uwu</div><br>
+    <div id="test"></div><br>
+    <div id="list"></div><br>
+    <div id="found"></div>
 </body>
 </html>

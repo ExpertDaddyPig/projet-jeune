@@ -1,0 +1,10 @@
+img {
+    margin: auto;
+    width: auto;
+    height: auto;
+}
+
+div#title_band {
+    display: block;
+    height: 75px;
+}
