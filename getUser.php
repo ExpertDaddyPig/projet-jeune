@@ -14,10 +14,10 @@
     foreach ($users as $user) {
         $pos = $pos + 1;
         if ($query->username === $user->username) {
-            $in = true;
+            $found = true;
             break;
         } else if ($query->email === $user->email) {
-            $in = true;
+            $found = true;
             break;
         }
     }
