@@ -3,7 +3,7 @@ let userRes;
 
 function atCheck() {
     let emailInput = document.getElementById("email").value;
-    if (emailInput.includes("@")) {
+    if (emailInput.includes("@") && emailInput !== "") {
         notValid = false;
     } else {
         notValid = true;
@@ -68,6 +68,12 @@ function getUser(user) {
 function modUser() {
     if (notValid) return alert("Entrées erronées (check if email is true email.)");
     let username = document.getElementById("username").value;
+    let firstName = document.getElementById("firstName").value;
+    let lastName = document.getElementById("lastName").value;
+    let birthDay = document.getElementById("birthDay").value;
+    let birthMonth = document.getElementById("birthMonth").value;
+    let birthYear = document.getElementById("birthYear").value;
+    let socials = document.getElementById("socials").value;
     let email = document.getElementById("email").value;
     let pass = document.getElementById("password").value;
     const xhttp = new XMLHttpRequest();
@@ -94,7 +100,6 @@ function modUser() {
 
 function login() {
     if (notValid) return alert("Entrées erronées (check if email is true email.)");
-    atCheck();
     let username = document.getElementById("username").value;
     let email = document.getElementById("email").value;
     let pass = document.getElementById("password").value;
@@ -123,6 +128,7 @@ function login() {
             alert("Access granted")
         }
     }, 200)
+    atCheck();
 }
 
 function send() {
