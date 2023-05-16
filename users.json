@@ -1,12 +1,13 @@
 [
     {
-        "username": "ExpertDaddyPig",
+        "username": "amogus",
+        "email": "amogus@gmail.com",
         "password": "amogus",
-        "email": "gedeonmuyalaba@gmail.com"
-    },
-    {
-        "username": "prof",
-        "password": "156235614",
-        "email": "prof@kaka.com"
+        "prenom": "amo",
+        "nom": "gus",
+        "jour": "10",
+        "mois": "4",
+        "annee": "2001",
+        "ref": []
     }
 ]

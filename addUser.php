@@ -18,6 +18,7 @@
         }
     }
     if (!$in) {
+        $object->ref = array();
         array_push($users, $object);
         echo $object->username." added";
     }
