@@ -22,6 +22,7 @@ function register() {
         document.getElementById("switch").value = "Register";
     }
 }
+
 function atCheckRegister() {
     let emailInput = document.getElementById("email2").value;
     if (emailInput.includes("@") && emailInput !== "") {
@@ -61,8 +62,6 @@ function addUser() {
     }
 }
 
-
-
 function getUser(user) {
     const xhttp = new XMLHttpRequest()
     let query = { username: user, email: user };
@@ -71,6 +70,28 @@ function getUser(user) {
         if (this.readyState === 4 && this.status === 200) {
             if (this.responseText !== "") {
                 userRes = JSON.parse(this.responseText);
+                return;
+            } else {
+                alert("Nobody found")
+                return;
+            }
+        }
+    };
+    if (xhttp.status !== 0) {
+        alert("weird thing happened");
+    } else {
+        xhttp.send();
+    }
+}
+
+function getRef(user, id) {
+    const xhttp = new XMLHttpRequest()
+    let query = { username: user, id: id };
+    xhttp.open("GET", "getRef.php?query=" + JSON.stringify(query));
+    xhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            if (this.responseText !== "") {
+                refRes = JSON.parse(this.responseText);
                 return;
             } else {
                 alert("Nobody found")
@@ -153,5 +174,4 @@ function send() {
         xml.open("GET", "sendMail.php?msg=" + message + "&sbj=" + subject + "&email="+ user.email);
         xml.send()
     }, 200)
-
 }
