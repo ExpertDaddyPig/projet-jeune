@@ -1,12 +1,48 @@
 [
     {
-        "username": "ExpertDaddyPig",
+        "username": "amogus",
+        "email": "amogus@gmail.com",
         "password": "amogus",
-        "email": "gedeonmuyalaba@gmail.com"
-    },
-    {
-        "username": "prof",
-        "password": "156235614",
-        "email": "prof@kaka.com"
+        "prenom": "amo",
+        "nom": "gus",
+        "jour": "10",
+        "mois": "4",
+        "annee": "2001",
+        "refs": [
+            {
+                "id": "kzeu593l4ajvrtgjulrcc5mhx27yqkvb",
+                "userEmail": "amogus@gmail.com",
+                "userFirstName": "amo",
+                "userLastName": "gus",
+                "date": "10\/4\/2001",
+                "refFirstName": "G\u00e9d\u00e9on",
+                "refLastName": "Laba",
+                "refEmail": "gedeonmuyalaba@gmail.com",
+                "socials": "twitter\/amongus",
+                "place": "Space",
+                "engagement": {
+                    "title": "tegsfds",
+                    "desc": "J'ai \u00e9t\u00e9 un tr\u00e8s bon crewmate"
+                },
+                "valid": "pending"
+            },
+            {
+                "id": "e7bdxl3zdtmgtrzq284e4p4augyb1m8c5",
+                "userEmail": "amogus@gmail.com",
+                "userFirstName": "amo",
+                "userLastName": "gus",
+                "date": "10\/4\/2001",
+                "refFirstName": "G\u00e9d\u00e9on",
+                "refLastName": "Laba",
+                "refEmail": "gedeonmuyalaba@gmail.com",
+                "socials": "twitter\/amongus",
+                "place": "Space",
+                "engagement": {
+                    "title": "tegsfds",
+                    "desc": "J'ai \u00e9t\u00e9 un tr\u00e8s bon crewmate"
+                },
+                "valid": "pending"
+            }
+        ]
     }
 ]
