@@ -1,8 +1,35 @@
 let notValid = true;
 let userRes;
 
+<<<<<<< HEAD
 function atCheck() {
     let emailInput = document.getElementById("email").value;
+=======
+function reveal() {
+    let type = document.getElementById("password").type;
+    if (type === "password") {
+        document.getElementById("password").type = "text";
+    } else {
+        document.getElementById("password").type = "password";
+    }
+}
+
+function register() {
+    let login = document.getElementById("login").className;
+    if (login.includes("show")) {
+        document.getElementById("login").classList = "hidden";
+        document.getElementById("register").classList = "show";
+        document.getElementById("switch").value = "Login";
+    } else {
+        document.getElementById("login").classList = "show";
+        document.getElementById("register").classList = "hidden";
+        document.getElementById("switch").value = "Register";
+    }
+}
+
+function atCheckRegister() {
+    let emailInput = document.getElementById("email2").value;
+>>>>>>> 25715b90f87e76daeebda52e7d31887047449674
     if (emailInput.includes("@") && emailInput !== "") {
         notValid = false;
     } else {
@@ -11,35 +38,32 @@ function atCheck() {
 }
 
 function addUser() {
-    if (notValid) return alert("Entrées erronées (check if email is true email.)");
+    atCheckRegister();
+    if (notValid) return alert("Entrées erronées (check if email is true email)");
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             if (this.responseText === "") {
                 alert("already there")
             }
-            document.getElementById("test").innerHTML = this.responseText;
+            alert(this.responseText);
         }
     };
-    let user = document.getElementById("username").value;
-    let pass = document.getElementById("password").value;
-    let infos = { username: user, password: pass };
+    let username = document.getElementById("username2").value;
+    let firstName = document.getElementById("firstName").value;
+    let lastName = document.getElementById("lastName").value;
+    let birthDay = document.getElementById("birthDay").value;
+    let birthMonth = document.getElementById("birthMonth").value;
+    let birthYear = document.getElementById("birthYear").value;
+    let email = document.getElementById("email2").value;
+    let pass = document.getElementById("password2").value;
+    let infos = { username: username, email: email, password: pass, prenom: firstName, nom: lastName, jour: birthDay, mois: birthMonth, annee: birthYear };
     let object = JSON.stringify(infos);
     xhttp.open("GET", "addUser.php?object=" + object);
     if (xhttp.status !== 0) {
         alert("weird thing happened");
     } else {
         xhttp.send();
-    }
-    atCheck();
-}
-
-function reveal() {
-    let type = document.getElementById("password").type;
-    if (type === "password") {
-        document.getElementById("password").type = "text";
-    } else {
-        document.getElementById("password").type = "password";
     }
 }
 
@@ -65,7 +89,30 @@ function getUser(user) {
     }
 }
 
+function getRef(user, id) {
+    const xhttp = new XMLHttpRequest()
+    let query = { username: user, id: id };
+    xhttp.open("GET", "getRef.php?query=" + JSON.stringify(query));
+    xhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            if (this.responseText !== "") {
+                refRes = JSON.parse(this.responseText);
+                return;
+            } else {
+                alert("Nobody found")
+                return;
+            }
+        }
+    };
+    if (xhttp.status !== 0) {
+        alert("weird thing happened");
+    } else {
+        xhttp.send();
+    }
+}
+
 function modUser() {
+    atCheckRegister();
     if (notValid) return alert("Entrées erronées (check if email is true email.)");
     let username = document.getElementById("username").value;
     let firstName = document.getElementById("firstName").value;
@@ -73,7 +120,10 @@ function modUser() {
     let birthDay = document.getElementById("birthDay").value;
     let birthMonth = document.getElementById("birthMonth").value;
     let birthYear = document.getElementById("birthYear").value;
+<<<<<<< HEAD
     let socials = document.getElementById("socials").value;
+=======
+>>>>>>> 25715b90f87e76daeebda52e7d31887047449674
     let email = document.getElementById("email").value;
     let pass = document.getElementById("password").value;
     const xhttp = new XMLHttpRequest();
@@ -88,44 +138,31 @@ function modUser() {
             }
         }
     };
-    let query = { username: username, email: email, password: pass };
+    let query = { username: username, email: email, password: pass, prenom: firstName, nom: lastName, jour: birthDay, mois: birthMonth, annee: birthYear };
     xhttp.open("GET", "modifyUser.php?query=" + JSON.stringify(query));
     if (xhttp.status !== 0) {
         alert("weird thing happened");
     } else {
         xhttp.send();
     }
-    atCheck();
 }
 
 function login() {
+<<<<<<< HEAD
     if (notValid) return alert("Entrées erronées (check if email is true email.)");
+=======
+>>>>>>> 25715b90f87e76daeebda52e7d31887047449674
     let username = document.getElementById("username").value;
-    let email = document.getElementById("email").value;
     let pass = document.getElementById("password").value;
     getUser(username)
     setTimeout(() => {
         let user = userRes;
         if (user === undefined) {
-            getUser(email)
-            setTimeout(() => {
-                let user = userRes;
-                if (user === undefined) {
-                    alert("No user found with that email : " + email + ", and with that username : " + username);
-                } else if (user.password !== pass) {
-                    alert("Wrong password")
-                } else {
-                    alert("Access granted")
-                }
-            }, 200)
-            return;
-        }
-        if (user === undefined) {
             alert("No user found with that username : " + username);
         } else if (user.password !== pass) {
             alert("Wrong password")
         } else {
-            alert("Access granted")
+            window.location = `/jeune.html?query=${user.username}`
         }
     }, 200)
     atCheck();
@@ -151,5 +188,4 @@ function send() {
         xml.open("GET", "sendMail.php?msg=" + message + "&sbj=" + subject + "&email="+ user.email);
         xml.send()
     }, 200)
-
 }

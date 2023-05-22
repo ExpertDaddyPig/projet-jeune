@@ -4,7 +4,10 @@ img {
     height: auto;
 }
 
-div#title_band {
-    display: block;
-    height: 75px;
+.inline {
+    display: inline-block;
+}
+
+.hidden {
+    display: none;
 }
