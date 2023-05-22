@@ -47,8 +47,8 @@
         if ($users[$pos]->annee !== $object->annee) {
             $users[$pos]->annee = $object->annee;
         }
-        if ($users[$pos]->ref !== $object->ref) {
-            $users[$pos]->ref = $object->ref;
+        if ($users[$pos]->refs !== $object->refs) {
+            $users[$pos]->refs = $object->refs;
         }
         echo json_encode($users[$pos]);
     }

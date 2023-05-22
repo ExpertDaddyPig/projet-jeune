@@ -1,10 +1,6 @@
 let notValid = true;
 let userRes;
 
-<<<<<<< HEAD
-function atCheck() {
-    let emailInput = document.getElementById("email").value;
-=======
 function reveal() {
     let type = document.getElementById("password").type;
     if (type === "password") {
@@ -29,7 +25,6 @@ function register() {
 
 function atCheckRegister() {
     let emailInput = document.getElementById("email2").value;
->>>>>>> 25715b90f87e76daeebda52e7d31887047449674
     if (emailInput.includes("@") && emailInput !== "") {
         notValid = false;
     } else {
@@ -120,10 +115,6 @@ function modUser() {
     let birthDay = document.getElementById("birthDay").value;
     let birthMonth = document.getElementById("birthMonth").value;
     let birthYear = document.getElementById("birthYear").value;
-<<<<<<< HEAD
-    let socials = document.getElementById("socials").value;
-=======
->>>>>>> 25715b90f87e76daeebda52e7d31887047449674
     let email = document.getElementById("email").value;
     let pass = document.getElementById("password").value;
     const xhttp = new XMLHttpRequest();
@@ -148,10 +139,6 @@ function modUser() {
 }
 
 function login() {
-<<<<<<< HEAD
-    if (notValid) return alert("Entrées erronées (check if email is true email.)");
-=======
->>>>>>> 25715b90f87e76daeebda52e7d31887047449674
     let username = document.getElementById("username").value;
     let pass = document.getElementById("password").value;
     getUser(username)
@@ -165,7 +152,6 @@ function login() {
             window.location = `/jeune.html?query=${user.username}`
         }
     }, 200)
-    atCheck();
 }
 
 function send() {

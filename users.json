@@ -3,14 +3,6 @@
         "username": "amogus",
         "email": "amogus@gmail.com",
         "password": "amogus",
-<<<<<<< HEAD
-        "email": "@"
-    },
-    {
-        "username": "prof",
-        "password": "156235614",
-        "email": "prof@kaka.com"
-=======
         "prenom": "amo",
         "nom": "gus",
         "jour": "10",
@@ -32,7 +24,21 @@
                     "title": "tegsfds",
                     "desc": "J'ai \u00e9t\u00e9 un tr\u00e8s bon crewmate"
                 },
-                "valid": "pending"
+                "valid": true,
+                "confirm": [
+                    {
+                    "refEmail": "gedeonmuyalaba@gmail.com",
+                    "prenom": "G\u00e9d\u00e9on",
+                    "nom": "Laba",
+                    "date": "1\/1\/1956",
+                    "socials": "twitter\/amongus",
+                    "place": "Space",
+                    "engagement": {
+                        "title": "Amongus",
+                        "desc": "Game d'amongus"
+                    }
+                    }
+                ]
             },
             {
                 "id": "e7bdxl3zdtmgtrzq284e4p4augyb1m8c5",
@@ -49,9 +55,9 @@
                     "title": "tegsfds",
                     "desc": "J'ai \u00e9t\u00e9 un tr\u00e8s bon crewmate"
                 },
-                "valid": "pending"
+                "valid": "pending",
+                "confirm": []
             }
         ]
->>>>>>> 25715b90f87e76daeebda52e7d31887047449674
     }
 ]

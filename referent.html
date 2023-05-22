@@ -13,48 +13,93 @@
             <div id="con" class="inline">CONSULTANT</div>
             <div id="ref" class="inline">REFERANT</div>
             <div id="par" class="inline">PARTENAIRES</div><br>
-            <input type="button" id="createRef" name="createRef" value="Soumettre une référence" onclick="change()">
             <div id="sendRef">
                 Nom<br>
                 <input type="text" id="refLastName" name="refLastName"><br>
                 Prénom<br>
                 <input type="text" id="refFirstName" name="refFirstName"><br>
                 Date de naissance<br>
-                <input type="text" id="refBirthDate" name="refBirthDate"><br>
+                <select id="refBirthDay" name="refBirthDay">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+                <select id="refBirthMonth" name="refBirthMonth">
+                    <option value="1" selected>Janvier</option>
+                    <option value="2">Fevrier</option>
+                    <option value="3">Mars</option>
+                    <option value="4">Avril</option>
+                    <option value="5">Mai</option>
+                    <option value="6">Juin</option>
+                    <option value="7">Juillet</option>
+                    <option value="8">Août</option>
+                    <option value="9">Septembre</option>
+                    <option value="10">Octobre</option>
+                    <option value="11">Novembre</option>
+                    <option value="12">Décembre</option>
+                </select>
+                <input type="text" id="refBirthYear" name="refBirthYear"><br>
                 Mail<br>
                 <input type="text" id="refEmail" name="refEmail"><br>
                 Reseau Social<br>
                 <input type="text" id="socials" name="socials"><br>
-                Milieu de l'engagement <br>
+                Milieu de la presentation<br>
                 <input type="text" id="place" name="place"><br>
-                Mon engagement<br>
+                Presentation<br>
                 <input type="text" id="title" name="title"><br>
-                Description de mon engagement<br>
+                Description de la présentation<br>
                 <input type="text" id="desc" name="desc"><br>
-                Mes Savoirs Être<br>
-                <input class="savoirs" id="auto" name="auto" type="checkbox" value="Autonome">
-                <label for="auto">Autonome</label><br>
-                <input class="savoirs" id="capable" name="capable" type="checkbox" value="Capable d'analyse et de synthèse">
-                <label for="capable">Capable d'analyse et de synthèse</label><br>
-                <input class="savoirs" id="ecoute" name="ecoute" type="checkbox" value="A l'écoute">
-                <label for="ecoute">A l'écoute</label><br>
-                <input class="savoirs" id="orga" name="orga" type="checkbox" value="Organisé">
-                <label for="orga">Organisé</label><br>
-                <input class="savoirs" id="passion" name="passion" type="checkbox" value="Passionné">
-                <label for="passion">Passionné</label><br>
-                <input class="savoirs" id="fiable" name="fiable" type="checkbox" value="Fiable">
-                <label for="fiable">Fiable</label><br>
-                <input class="savoirs" id="patient" name="patient" type="checkbox" value="Patient">
-                <label for="patient">Patient</label><br>
-                <input class="savoirs" id="reflechi" name="reflechi" type="checkbox" value="Réfléchi">
-                <label for="reflechi">Réfléchi</label><br>
-                <input class="savoirs" id="resp" name="resp" type="checkbox" value="Responsable">
-                <label for="resp">Responsable</label><br>
-                <input class="savoirs" id="sociable" name="sociable" type="checkbox" value="Sociable">
-                <label for="sociable">Sociable</label><br>
-                <input class="savoirs" id="opti" name="opti" type="checkbox" value="Optimiste">
-                <label for="opti">Optimiste</label><br>
-                <input type="button" value="Enregistrer la référence" onclick="addRef()">
+                Ses savoirs être<br>
+                Je confirme ...<br>
+                <input class="confirmations" id="ponc" name="ponc" type="checkbox" value="Ponctualité">
+                <label for="ponc">Ponctualité</label><br>
+                <input class="confirmations" id="conf" name="conf" type="checkbox" value="Confiance">
+                <label for="conf">Confiance</label><br>
+                <input class="confirmations" id="seri" name="seri" type="checkbox" value="Sérieux">
+                <label for="seri">Sérieux</label><br>
+                <input class="confirmations" id="honnete" name="honnete" type="checkbox" value="Honnêteté">
+                <label for="honnete">Honnêteté</label><br>
+                <input class="confirmations" id="tolerant" name="tolerant" type="checkbox" value="Tolérant">
+                <label for="tolerant">Tolérant</label><br>
+                <input class="confirmations" id="bien" name="bien" type="checkbox" value="Bienveillance">
+                <label for="bien">Bienveillance</label><br>
+                <input class="confirmations" id="respect" name="respect" type="checkbox" value="Respect">
+                <label for="respect">Respect</label><br>
+                <input class="confirmations" id="just" name="just" type="checkbox" value="Juste">
+                <label for="just">Juste</label><br>
+                <input class="confirmations" id="imp" name="imp" type="checkbox" value="Impartial">
+                <label for="imp">Impartial</label><br>
+                <input class="confirmations" id="travail" name="travail" type="checkbox" value="Travail">
+                <label for="travail">Travail</label><br>
+                <input type="button" value="Confirmer la référence" onclick="modRef()">
             </div>
         </div>
     </body>

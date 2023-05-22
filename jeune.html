@@ -14,8 +14,9 @@
             <div id="ref" class="inline">REFERANT</div>
             <div id="par" class="inline">PARTENAIRES</div><br>
             <input type="button" id="createRef" name="createRef" value="Soumettre une référence" onclick="change()">
+            <input type="button" id="sendRefs" name="sendRefs" value="Envoyer des références" onclick="change(this.id)">
             <div id="pending" class="show"></div>
-            <div id="sendRef" class="hidden">
+            <div id="newRef" class="hidden">
                 Nom<br>
                 <input type="text" id="userLastName" name="userLastName"><br>
                 Prénom<br>
@@ -39,6 +40,7 @@
                 Description de mon engagement<br>
                 <input type="text" id="desc" name="desc"><br>
                 Mes Savoirs Être<br>
+                Je suis... <br>
                 <input class="savoirs" id="auto" name="auto" type="checkbox" value="Autonome">
                 <label for="auto">Autonome</label><br>
                 <input class="savoirs" id="capable" name="capable" type="checkbox" value="Capable d'analyse et de synthèse">
@@ -62,6 +64,9 @@
                 <input class="savoirs" id="opti" name="opti" type="checkbox" value="Optimiste">
                 <label for="opti">Optimiste</label><br>
                 <input type="button" value="Enregistrer la référence" onclick="addRef()">
+            </div>
+            <div id="sendRef"class="hidden">
+
             </div>
         </div>
     </body>
