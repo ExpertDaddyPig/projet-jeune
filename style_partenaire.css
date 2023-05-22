@@ -47,7 +47,6 @@ body{
 
 }
 
-
 #jeune{
     display: inline-block;
 }
@@ -75,4 +74,26 @@ body{
     margin-right: 0px;
     padding-left: 8px;
     padding-right: 8px;
+}
+
+
+#text{
+    margin-top: 20px;
+}
+
+#text img{
+    height: 450px;
+    width: auto;
+}
+
+#text div{
+    text-align: left;
+    color: rgb(112, 112, 112);
+    font-size: 175%;
+    margin-left: 25%;
+    max-width: 50%;
+}
+
+#text div a{
+    text-decoration: none;
 }
