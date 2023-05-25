@@ -71,9 +71,6 @@ function getUser(user) {
             if (this.responseText !== "") {
                 userRes = JSON.parse(this.responseText);
                 return;
-            } else {
-                alert("Nobody found")
-                return;
             }
         }
     };

@@ -10,7 +10,7 @@
         "annee": "2001",
         "refs": [
             {
-                "id": "kzeu593l4ajvrtgjulrcc5mhx27yqkvb",
+                "id": "50hlfq6b57kgq7j33dba9l0c0lmsk6snpa",
                 "userEmail": "amogus@gmail.com",
                 "userFirstName": "amo",
                 "userLastName": "gus",
@@ -19,42 +19,17 @@
                 "refLastName": "Laba",
                 "refEmail": "gedeonmuyalaba@gmail.com",
                 "socials": "twitter\/amongus",
-                "place": "Space",
+                "place": "Spacegf",
                 "engagement": {
-                    "title": "tegsfds",
-                    "desc": "J'ai \u00e9t\u00e9 un tr\u00e8s bon crewmate"
+                    "title": "gfsdgfsdg",
+                    "desc": "fdsgfdsgfsdgfsdgd"
                 },
-                "valid": true,
-                "confirm": [
-                    {
-                    "refEmail": "gedeonmuyalaba@gmail.com",
-                    "prenom": "G\u00e9d\u00e9on",
-                    "nom": "Laba",
-                    "date": "1\/1\/1956",
-                    "socials": "twitter\/amongus",
-                    "place": "Space",
-                    "engagement": {
-                        "title": "Amongus",
-                        "desc": "Game d'amongus"
-                    }
-                    }
-                ]
-            },
-            {
-                "id": "e7bdxl3zdtmgtrzq284e4p4augyb1m8c5",
-                "userEmail": "amogus@gmail.com",
-                "userFirstName": "amo",
-                "userLastName": "gus",
-                "date": "10\/4\/2001",
-                "refFirstName": "G\u00e9d\u00e9on",
-                "refLastName": "Laba",
-                "refEmail": "gedeonmuyalaba@gmail.com",
-                "socials": "twitter\/amongus",
-                "place": "Space",
-                "engagement": {
-                    "title": "tegsfds",
-                    "desc": "J'ai \u00e9t\u00e9 un tr\u00e8s bon crewmate"
-                },
+                "se": [
+                    "auto",
+                    "capable",
+                    "ecoute",
+                    "orga"
+                ],
                 "valid": "pending",
                 "confirm": []
             }

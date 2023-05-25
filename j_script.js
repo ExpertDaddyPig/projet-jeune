@@ -9,6 +9,21 @@ function atCheckRegister() {
     }
 }
 
+function checkVerifier() {
+    let checkboxes = document.querySelectorAll("input.savoirs");
+    let checked = 0;
+    checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            checked++;
+        }
+    });
+    if (checked > 4 || checked === 0) {
+        refNotValid = true;
+    } else {
+        refNotValid = false;
+    }
+}
+
 function loadRefs() {
     document.getElementById("pending").innerHTML = "Recherche de références en cours..."
     const xhttp = new XMLHttpRequest();
@@ -116,6 +131,8 @@ function change(option) {
 function addRef() {
     atCheckRegister();
     if (refNotValid) return alert("Entrées erronées (check if email is true email)");
+    checkVerifier();
+    if (refNotValid) return alert("Vous avez sélectionné trop de savoir être, choisissez en 4 maximum.");
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
@@ -125,6 +142,13 @@ function addRef() {
             alert(this.responseText);
         }
     };
+    let checkboxes = document.querySelectorAll("input.savoirs");
+    let se = [];
+    checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            se.push(checkbox.id);
+        }
+    });
     let uniqueID = Math.random().toString(36).substring(2)+Math.random().toString(36).substring(2)+Math.random().toString(36).substring(2)
     let username = window.location.search.split("=")[1];
     let userFirstName = document.getElementById("userFirstName").value;
@@ -138,7 +162,7 @@ function addRef() {
     let place = document.getElementById("place").value;
     let title = document.getElementById("title").value;
     let desc = document.getElementById("desc").value;
-    let infos = { id: uniqueID, userEmail: userEmail, userFirstName: userFirstName, userLastName: userLastName, date: birthDate, refFirstName: refFirstName, refLastName: refLastName, refEmail: refEmail, socials: socials, place: place, engagement: {title: title, desc: desc}, valid: "pending", confirm: []};
+    let infos = { id: uniqueID, userEmail: userEmail, userFirstName: userFirstName, userLastName: userLastName, date: birthDate, refFirstName: refFirstName, refLastName: refLastName, refEmail: refEmail, socials: socials, place: place, engagement: {title: title, desc: desc}, se: se, valid: "pending", confirm: []};
     let object = JSON.stringify(infos);
     xhttp.open("GET", "addRef.php?object=" + object + "&username=" + username);
     if (xhttp.status !== 0) {
