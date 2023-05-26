@@ -6,10 +6,10 @@
     }
     fclose($file);
     $users = new stdClass;
-    $listString = "";
+    $list = array();
     $users = json_decode($buffer);
     foreach ($users as $user) {
-        $listString .= $user->username."<br>";
+        array_push($list, $user);
     }
-    echo $listString;
+    echo json_encode($list);
 ?>

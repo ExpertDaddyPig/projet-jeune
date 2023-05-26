@@ -1,38 +1,35 @@
 [
     {
         "username": "amogus",
-        "email": "amogus@gmail.com",
+        "email": "sus@gmail.com",
         "password": "amogus",
-        "prenom": "amo",
-        "nom": "gus",
-        "jour": "10",
-        "mois": "4",
+        "prenom": "Amogus",
+        "nom": "Sussy",
+        "jour": "1",
+        "mois": "1",
+        "annee": "1992",
+        "refs": []
+    },
+    {
+        "username": "amoooogus",
+        "email": "sussy@gmail.com",
+        "password": "amogus",
+        "prenom": "Amogus",
+        "nom": "Sussy",
+        "jour": "1",
+        "mois": "2",
+        "annee": "1992",
+        "refs": []
+    },
+    {
+        "username": "Baka",
+        "email": "sussybaka@gmail.com",
+        "password": "caca",
+        "prenom": "fdsqfdsq",
+        "nom": "fdsqfdsqfds",
+        "jour": "8",
+        "mois": "7",
         "annee": "2001",
-        "refs": [
-            {
-                "id": "50hlfq6b57kgq7j33dba9l0c0lmsk6snpa",
-                "userEmail": "amogus@gmail.com",
-                "userFirstName": "amo",
-                "userLastName": "gus",
-                "date": "10\/4\/2001",
-                "refFirstName": "G\u00e9d\u00e9on",
-                "refLastName": "Laba",
-                "refEmail": "gedeonmuyalaba@gmail.com",
-                "socials": "twitter\/amongus",
-                "place": "Spacegf",
-                "engagement": {
-                    "title": "gfsdgfsdg",
-                    "desc": "fdsgfdsgfsdgfsdgd"
-                },
-                "se": [
-                    "auto",
-                    "capable",
-                    "ecoute",
-                    "orga"
-                ],
-                "valid": "pending",
-                "confirm": []
-            }
-        ]
+        "refs": []
     }
 ]

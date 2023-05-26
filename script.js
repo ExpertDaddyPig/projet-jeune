@@ -1,5 +1,36 @@
 let notValid = true;
 let userRes;
+let userList;
+let usernameNotValid = false;
+let emailNotValid = false;
+
+function alreadyUsedUsername(username, oldUsername) {
+    let found;
+    userList.forEach(user => {
+        if (user.username === username && user.username !== oldUsername) {
+            found = user;
+        }
+    });
+    if (found !== undefined) {
+        usernameNotValid = true;
+    } else {
+        usernameNotValid = false;
+    }
+}
+
+function alreadyUsedEmail(email, oldEmail) {
+    let found;
+    userList.forEach(user => {
+        if (user.email === email && user.email !== oldEmail) {
+            found = user;
+        }
+    });
+    if (found !== undefined) {
+        emailNotValid = true;
+    } else {
+        emailNotValid = false;
+    }
+}
 
 function reveal() {
     let type = document.getElementById("password").type;
@@ -7,6 +38,15 @@ function reveal() {
         document.getElementById("password").type = "text";
     } else {
         document.getElementById("password").type = "password";
+    }
+}
+
+function revealOld() {
+    let type = document.getElementById("oldPassword").type;
+    if (type === "password") {
+        document.getElementById("oldPassword").type = "text";
+    } else {
+        document.getElementById("oldPassword").type = "password";
     }
 }
 
@@ -20,6 +60,15 @@ function register() {
         document.getElementById("login").classList = "show";
         document.getElementById("register").classList = "hidden";
         document.getElementById("switch").value = "Register";
+    }
+}
+
+function atCheck() {
+    let emailInput = document.getElementById("email").value;
+    if (emailInput.includes("@") && emailInput !== "") {
+        notValid = false;
+    } else {
+        notValid = true;
     }
 }
 
@@ -45,16 +94,38 @@ function addUser() {
         }
     };
     let username = document.getElementById("username2").value;
+    alreadyUsedUsername(username);
+    if (usernameNotValid) return alert("Nom d'utilisateur indisponible");
+    let email = document.getElementById("email2").value;
+    alreadyUsedEmail(email);
+    if (emailNotValid) return alert("Email déjà enregistré");
     let firstName = document.getElementById("firstName").value;
     let lastName = document.getElementById("lastName").value;
     let birthDay = document.getElementById("birthDay").value;
     let birthMonth = document.getElementById("birthMonth").value;
     let birthYear = document.getElementById("birthYear").value;
-    let email = document.getElementById("email2").value;
     let pass = document.getElementById("password2").value;
     let infos = { username: username, email: email, password: pass, prenom: firstName, nom: lastName, jour: birthDay, mois: birthMonth, annee: birthYear };
     let object = JSON.stringify(infos);
     xhttp.open("GET", "addUser.php?object=" + object);
+    if (xhttp.status !== 0) {
+        alert("weird thing happened");
+    } else {
+        xhttp.send();
+    }
+}
+
+function getAllUsers() {
+    const xhttp = new XMLHttpRequest()
+    xhttp.open("GET", "getAllUsers.php");
+    xhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            if (this.responseText !== "") {
+                userList = JSON.parse(this.responseText);
+                return;
+            }
+        }
+    };
     if (xhttp.status !== 0) {
         alert("weird thing happened");
     } else {

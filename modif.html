@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Se Connecter - JEUNES 6.4</title>
+        <script type="text/javascript" src="./m_script.js"></script>
         <script type="text/javascript" src="./script.js"></script>
         <link rel="stylesheet" href="./style.css">
     </head>
@@ -19,11 +20,11 @@
                 Nom<br>
                 <input type="text" id="lastName" name="lastName"><br>
                 Username<br>
-                <input type="text" id="username2" name="username"><br>
+                <input type="text" id="username" name="username"><br>
                 Email<br>
-                <input type="text" id="email2" name="email" onchange="atCheckRegister()"><br>
+                <input type="text" id="email" name="email"><br>
                 Mot de passe<br>
-                <input type="password" id="password2" name="password"><input type="button" value="reveal" onclick="reveal()"><br>
+                <input type="password" id="password" name="password"><input type="button" value="reveal" onclick="reveal()"><br>
                 Date de naissance:<br>
                 <select id="birthDay" name="birthDay">
                     <option value="1" selected>1</option>
@@ -89,6 +90,7 @@
                     <option value="2005">2005</option>
                     <option value="2006">2006</option>
                   </select><br>
+                <input type="password" id="oldPassword" name="oldPassword"><input type="button" value="reveal" onclick="revealOld()"><br>
                 <input type="button" value="Modify User" onclick="modUser()">
             </div>
         </div>
