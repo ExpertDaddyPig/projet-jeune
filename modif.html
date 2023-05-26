@@ -13,15 +13,7 @@
             <img src="./logoprojetjeunes6_4/logo_full.png">
         </div>
         <div id="auth">
-            <input type="button" id="switch" value="register" onclick="register()"><br>
-            <div id="login" class="show">
-                Username / Email:<br>
-                <input type="text" id="username" name="username"><br>
-                Mot De Passe<br>
-                <input type="password" id="password" name="password"><input type="button" value="reveal" onclick="reveal()"><br>
-                <input type="button" value="login" onclick="login()">
-            </div>
-            <div id="register" class="hidden">
+            <div id="modifUser">
                 Prenom<br>
                 <input type="text" id="firstName" name="firstName"><br>
                 Nom<br>
@@ -97,7 +89,7 @@
                     <option value="2005">2005</option>
                     <option value="2006">2006</option>
                   </select><br>
-                <input type="button" value="Register" onclick="addUser()">
+                <input type="button" value="Modify User" onclick="modUser()">
             </div>
         </div>
     </body>

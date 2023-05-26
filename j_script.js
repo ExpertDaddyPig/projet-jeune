@@ -171,3 +171,16 @@ function addRef() {
         xhttp.send();
     }
 }
+
+function goToModif() {
+    let username = window.location.search.split("=")[1];
+    getUser(username);
+    setTimeout(() => {
+        let user = userRes;
+        if (user === undefined) {
+            alert("No user found with that username : " + username);
+        } else  {
+            window.location = `/modif.html?query=${user.username}`
+        }
+    }, 200)
+}
