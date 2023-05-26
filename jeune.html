@@ -8,67 +8,72 @@
     </head>
     <body>
         <div id="title_band">
-            <img src="./logoprojetjeunes6_4/logo_full.png">
-            <div id="jeu" class="inline">JEUNE</div>
-            <div id="con" class="inline">CONSULTANT</div>
-            <div id="ref" class="inline">REFERANT</div>
-            <div id="par" class="inline">PARTENAIRES</div><br>
-            <input type="button" id="modifUser" name="modifUser" value="Consulter et modifier mon profil" onclick="goToModif()">
-            <input type="button" id="createRef" name="createRef" value="Soumettre une référence" onclick="change()">
-            <input type="button" id="sendRefs" name="sendRefs" value="Envoyer des références" onclick="change(this.id)">
-            <div id="pending" class="show"></div>
-            <div id="newRef" class="hidden">
-                Nom<br>
-                <input type="text" id="userLastName" name="userLastName"><br>
-                Prénom<br>
-                <input type="text" id="userFirstName" name="userFirstName"><br>
-                Date de naissance<br>
-                <input type="text" id="userBirthDate" name="userBirthDate"><br>
-                Mail<br>
-                <input type="text" id="userEmail" name="userEmail"><br>
-                Reseau Social<br>
-                <input type="text" id="socials" name="socials"><br>
-                Nom du référent<br>
-                <input type="text" id="refLastName" name="refLastName"><br>
-                Prénom du référent<br>
-                <input type="text" id="refFirstName" name="refFirstName"><br>
-                Mail du référent<br>
-                <input type="text" id="refEmail" name="refEmail"><br>
-                Milieu de l'engagement <br>
-                <input type="text" id="place" name="place"><br>
-                Mon engagement<br>
-                <input type="text" id="title" name="title"><br>
-                Description de mon engagement<br>
-                <input type="text" id="desc" name="desc"><br>
-                Mes Savoirs Être<br>
-                Je suis... <br>
-                <input class="savoirs" id="auto" name="auto" type="checkbox" value="Autonome">
-                <label for="auto">Autonome</label><br>
-                <input class="savoirs" id="capable" name="capable" type="checkbox" value="Capable d'analyse et de synthèse">
-                <label for="capable">Capable d'analyse et de synthèse</label><br>
-                <input class="savoirs" id="ecoute" name="ecoute" type="checkbox" value="A l'écoute">
-                <label for="ecoute">A l'écoute</label><br>
-                <input class="savoirs" id="orga" name="orga" type="checkbox" value="Organisé">
-                <label for="orga">Organisé</label><br>
-                <input class="savoirs" id="passion" name="passion" type="checkbox" value="Passionné">
-                <label for="passion">Passionné</label><br>
-                <input class="savoirs" id="fiable" name="fiable" type="checkbox" value="Fiable">
-                <label for="fiable">Fiable</label><br>
-                <input class="savoirs" id="patient" name="patient" type="checkbox" value="Patient">
-                <label for="patient">Patient</label><br>
-                <input class="savoirs" id="reflechi" name="reflechi" type="checkbox" value="Réfléchi">
-                <label for="reflechi">Réfléchi</label><br>
-                <input class="savoirs" id="resp" name="resp" type="checkbox" value="Responsable">
-                <label for="resp">Responsable</label><br>
-                <input class="savoirs" id="sociable" name="sociable" type="checkbox" value="Sociable">
-                <label for="sociable">Sociable</label><br>
-                <input class="savoirs" id="opti" name="opti" type="checkbox" value="Optimiste">
-                <label for="opti">Optimiste</label><br>
-                <input type="button" value="Enregistrer la référence" onclick="addRef()">
-            </div>
-            <div id="sendRef"class="hidden">
-
-            </div>
+            <img src="./logoprojetjeunes6_4/logo_jeunes_64.png">
+            <h1 id="jeuneTitle">JEUNE</h1>
         </div>
+        <div id="buttons">
+                <h2 id="jeune"><a href="./auth.html">JEUNE</a></h2>
+                <h2 id="referent">REFERENT</h2>
+                <h2 id="consultant">CONSULTANT</h2>
+                <h2 id="partenaires"><a href="./partenaire.html">PARTENAIRES</a></h2>
+        </div>
+        <input type="button" id="modifUser" name="modifUser" value="Consulter et modifier mon profil" onclick="goToModif()">
+        <input type="button" id="createRef" name="createRef" value="Soumettre une référence" onclick="change()">
+        <input type="button" id="sendRefs" name="sendRefs" value="Envoyer des références" onclick="change(this.id)">
+        <div id="pending" class="show"></div>
+        <div id="newRef" class="hidden">
+            <label class="newRef" for="userLastName">Nom :</label>
+            <input class="newRef" type="text" id="userLastName" name="userLastName"><br>
+            <label class="newRef" for="userFirstName">Prénom :</label>
+            <input class="newRef" type="text" id="userFirstName" name="userFirstName"><br>
+            <label class="newRef" for="userBirthDate">Date de naissance :</label>
+            <input class="newRef" type="text" id="userBirthDate" name="userBirthDate"><br>
+            <label class="newRef" for="userEmail">Mail :</label>
+            <input class="newRef" type="text" id="userEmail" name="userEmail"><br>
+            <label class="newRef" for="socials">Reseau Social :</label>
+            <input class="newRef" type="text" id="socials" name="socials"><br>
+            <label class="newRef" for="refLastName">Nom du référent :</label>
+            <input class="newRef" type="text" id="refLastName" name="refLastName"><br>
+            <label class="newRef" for="refFirstName">Prénom du référent :</label>
+            <input class="newRef" type="text" id="refFirstName" name="refFirstName"><br>
+            <label class="newRef" for="refEmail">Mail du référent :</label>
+            <input class="newRef" type="text" id="refEmail" name="refEmail"><br>
+            <label class="newRef" for="place">Milieu de l'engagement :</label>
+            <input class="newRef" type="text" id="place" name="place"><br>
+            <label class="newRef" for="title">Mon engagement :</label>
+            <input class="newRef" type="text" id="title" name="title"><br>
+            <label class="newRef" for="desc">Description de mon engagement :</label>
+            <input class="newRef" type="textarea" id="desc" name="desc"><br>
+            <label class="newRef" for="time">Durée :</label>
+            <input class="newRef" type="text" id="time" name="title"><br>
+        </div>
+        <div id="se" class="hidden">
+            Mes Savoirs Être<br>
+            Je suis... <br>
+            <input class="savoirs" id="auto" name="auto" type="checkbox" value="Autonome">
+            <label for="auto">Autonome</label><br>
+            <input class="savoirs" id="capable" name="capable" type="checkbox" value="Capable d'analyse et de synthèse">
+            <label for="capable">Capable d'analyse et de synthèse</label><br>
+            <input class="savoirs" id="ecoute" name="ecoute" type="checkbox" value="A l'écoute">
+            <label for="ecoute">A l'écoute</label><br>
+            <input class="savoirs" id="orga" name="orga" type="checkbox" value="Organisé">
+            <label for="orga">Organisé</label><br>
+            <input class="savoirs" id="passion" name="passion" type="checkbox" value="Passionné">
+            <label for="passion">Passionné</label><br>
+            <input class="savoirs" id="fiable" name="fiable" type="checkbox" value="Fiable">
+            <label for="fiable">Fiable</label><br>
+            <input class="savoirs" id="patient" name="patient" type="checkbox" value="Patient">
+            <label for="patient">Patient</label><br>
+            <input class="savoirs" id="reflechi" name="reflechi" type="checkbox" value="Réfléchi">
+            <label for="reflechi">Réfléchi</label><br>
+            <input class="savoirs" id="resp" name="resp" type="checkbox" value="Responsable">
+            <label for="resp">Responsable</label><br>
+            <input class="savoirs" id="sociable" name="sociable" type="checkbox" value="Sociable">
+            <label for="sociable">Sociable</label><br>
+            <input class="savoirs" id="opti" name="opti" type="checkbox" value="Optimiste">
+            <label for="opti">Optimiste</label><br>
+        </div>
+        <input type="button" value="Enregistrer la référence" onclick="addRef()">
+        <div id="sendRef"class="hidden"></div>
     </body>
 </html>

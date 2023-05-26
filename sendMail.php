@@ -7,9 +7,6 @@ require 'modules/PHPMailer/src/Exception.php';
 require 'modules/PHPMailer/src/PHPMailer.php';
 require 'modules/PHPMailer/src/SMTP.php';
 
-$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-$source = $protocol . $_SERVER['HTTP_HOST'];
-
 $message = $_GET['message'];
 $subject = $_GET['subject'];
 $dest = $_GET['dest'];

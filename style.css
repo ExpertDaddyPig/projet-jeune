@@ -9,5 +9,162 @@ img {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
+
+body {
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: radial-gradient(white, #dddddd);
+    text-align: center
+}
+
+#title_band {
+    background: linear-gradient(90deg, rgba(169, 169, 169, 1) 0%, rgba(255, 255, 255, 1) 20%, rgba(169, 169, 169, 1) 100%);
+    margin: auto;
+    text-align: left;
+}
+
+#title_band img {
+    height: 250px;
+    width: auto;
+}
+
+#title_band h1 {
+    color: rgb(112, 112, 112);
+    font-size: 550%;
+    position: absolute;
+    top: 0px;
+    right: 16px;
+}
+
+#jeuneTitle {
+    color: rgb(229, 0, 126) !important;
+}
+
+#buttons {
+    background-image: linear-gradient(90deg, rgba(169, 169, 169, 1) 0%, rgba(255, 255, 255, 1) 20%, rgba(169, 169, 169, 1) 100%);
+    text-align: center;
+    max-width: 40%;
+    margin: auto;
+}
+
+#buttons h2 {
+    margin-left: 8px;
+    margin-right: 8px;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+
+}
+
+#jeune {
+    display: inline-block;
+}
+
+#jeune a {
+    text-decoration: none;
+    color: rgb(229, 0, 126);
+}
+
+#partenaires a {
+    text-decoration: none;
+    color: rgb(112, 112, 112);
+}
+
+#referent {
+    color: rgb(43, 173, 76);
+    display: inline-block;
+}
+
+#consultant {
+    color: rgb(98, 184, 221);
+    display: inline-block;
+}
+
+#partenaires {
+    color: rgb(112, 112, 112);
+    display: inline-block;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+
+#text {
+    margin-top: 20px;
+}
+
+#text img {
+    height: 450px;
+    width: auto;
+}
+
+#text div {
+    text-align: left;
+    color: rgb(112, 112, 112);
+    font-size: 175%;
+    margin-left: 25%;
+    max-width: 50%;
+}
+
+#text div a {
+    text-decoration: none;
+}
+
+#modifUser {
+    display: inline-block;
+    position: absolute;
+    transform: translateX(210%) translateY(-145%);
+    border: solid #acacac 3px;
+    padding: 7px 45px;
+    border-radius: 5px;
+    font-weight: bolder;
+    font-size: large;
+}
+
+label.newRef {
+    display: inline-block;
+    min-width: 280px;
+    margin: 3px;
+    color: rgb(229, 0, 126);
+    text-align: right;
+    font-weight: bolder;
+}
+
+input.newRef {
+    display: inline-block;
+    border: solid 2px;
+    margin: 3px;
+}
+
+div#newRef {
+    display: inline-block;
+    border: solid 2px rgb(229, 0, 126);
+    width: fit-content;
+    margin: auto;
+    padding-right: 40px;
+    background-color: #ffffff;
+}
+
+div#se {
+    background-color: rgb(254, 224, 237);
+    background-image: linear-gradient(90deg, rgb(255, 255, 255) 10%, rgba(169, 169, 169, 0) 100%);
+    text-align: left;
+    min-width: fit-content;
+    padding: 20px;
+    display:inline-block;
+}
+
+/**/

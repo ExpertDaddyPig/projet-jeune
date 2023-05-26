@@ -100,10 +100,12 @@ function change(option) {
         if (doc.includes("show")) {
             document.getElementById("pending").classList = "hidden";
             document.getElementById("newRef").classList = "show";
+            document.getElementById("se").classList = "show";
             document.getElementById("createRef").value = "Voir ses reférences";
         } else {
             document.getElementById("pending").classList = "show";
             document.getElementById("newRef").classList = "hidden";
+            document.getElementById("se").classList = "hidden";
             document.getElementById("sendRefs").classList = "show";
             document.getElementById("sendRef").classList = "hidden";
             document.getElementById("createRef").value = "Soumettre une référence";
@@ -114,11 +116,13 @@ function change(option) {
         if (doc.includes("show")) {
             document.getElementById("pending").classList = "show";
             document.getElementById("newRef").classList = "hidden";
+            document.getElementById("se").classList = "hidden";
             document.getElementById("sendRef").classList = "hidden";
             loadRefs();
         } else {
             document.getElementById("pending").classList = "hidden";
             document.getElementById("newRef").classList = "hidden";
+            document.getElementById("se").classList = "hidden";
             document.getElementById("sendRef").classList = "show";
             document.getElementById("sendRefs").classList = "hidden";
             document.getElementById("createRef").value = "Voir ses reférences";
@@ -134,7 +138,16 @@ function addRef() {
     checkVerifier();
     if (refNotValid) return alert("Vous avez sélectionné trop de savoir être, choisissez en 4 maximum.");
     const xhttp = new XMLHttpRequest();
+    const mailXhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            if (this.responseText === "") {
+                alert("already there")
+            }
+            alert(this.responseText);
+        }
+    };
+    mailXhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             if (this.responseText === "") {
                 alert("already there")
@@ -162,13 +175,26 @@ function addRef() {
     let place = document.getElementById("place").value;
     let title = document.getElementById("title").value;
     let desc = document.getElementById("desc").value;
-    let infos = { id: uniqueID, userEmail: userEmail, userFirstName: userFirstName, userLastName: userLastName, date: birthDate, refFirstName: refFirstName, refLastName: refLastName, refEmail: refEmail, socials: socials, place: place, engagement: {title: title, desc: desc}, se: se, valid: "pending", confirm: []};
+    let time = document.getElementById("time").value;
+    let infos = { id: uniqueID, userEmail: userEmail, userFirstName: userFirstName, userLastName: userLastName, date: birthDate, refFirstName: refFirstName, refLastName: refLastName, refEmail: refEmail, socials: socials, place: place, engagement: {title: title, desc: desc, time: time}, se: se, valid: "pending", confirm: []};
     let object = JSON.stringify(infos);
+    let subject = "Demande de confirmation de référence - " + userLastName.toUpperCase() + userFirstName;
+    let message = `Bonjour, <br>Le projet Jeunes 6.4 est un dispositif de valorisation de l’engagement des jeunes en Pyrénées-Atlantiques soutenu par l’Etat, le Conseil Général, le Conseil Régional, les CAF Béarn Soule et Pays Basque, la MSA, la CPAM.
+    <br>Le projet, adressé aux jeunes entre 16 et 30 ans, vise à valoriser toute expérience comme source d’enrichissement qui puisse être reconnue comme l’expression d’un savoir faire ou savoir être.<br>
+    Un jeune, ${userFirstName} vous a envoyé une demande de confirmation de référence. Cliquez sur le lien ci-dessous afin de confirmer les informations que le jeune a inscrit.<br>
+    <a href="${window.location.protocol}//${window.location.host}/referent.html?username=${username}&refID=${uniqueID}">CONFIRMER LA REFERENCES</a><br>
+    Projet Jeune 6.4`;
     xhttp.open("GET", "addRef.php?object=" + object + "&username=" + username);
+    mailXhttp.open("GET", "sendMail.php?dest=" + refEmail + "&subject=" + subject + "&message=" + message);
     if (xhttp.status !== 0) {
         alert("weird thing happened");
     } else {
         xhttp.send();
+    }
+    if (mailXhttp.status !== 0) {
+        alert("weird thing happened");
+    } else {
+        mailXhttp.send();
     }
 }
 
