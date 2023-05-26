@@ -1,14 +1,13 @@
 body{
     margin:auto;
-
+    font-family: Arial, Helvetica, sans-serif;
     background-image: radial-gradient(white,#dddddd);
 }
 
 #title_band{
-    background-image: radial-gradient(white,#A9A9A9);
+    text-align: left;
     background: linear-gradient(90deg, rgba(169,169,169,1) 0%, rgba(255,255,255,1) 20%, rgba(169,169,169,1) 100%);
     margin:auto;
-    text-align: left;
 }
 
 #title_band img{
@@ -16,18 +15,22 @@ body{
     width: auto;
 }
 
-#imgpart{
-    text-align: center
+#title_band h1{
+    color: white;
+    font-size: 250%;
+    position: absolute;
+    top: 175px;
+    right: 16px;
+    text-align: right;
 }
 
+
+
 #buttons{
-    background-image: radial-gradient(white,#A9A9A9);
     background: linear-gradient(90deg, rgba(169,169,169,1) 0%, rgba(255,255,255,1) 20%, rgba(169,169,169,1) 100%);
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    max-width: 35%;
-    margin: auto;
-    
+    max-width: 40%;
+    margin: auto;   
 }
 
 #buttons h2{
@@ -68,36 +71,109 @@ body{
     padding-right: 8px;
 }
 
-#txt1{
+h3{
     font-size: 40px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: right;
-    color: white;
+    text-align: center;
+    color: grey;
     margin-right: 50px;
-    display: block;
 }
 
 #par1{
-    
-    font-family: Arial, Helvetica, sans-serif;
     color: grey;
-    margin-left: 100px;
+    margin-left: 45px;
 }
 
 #par2{ 
-    font-family: Arial, Helvetica, sans-serif;
     color: grey;
-    margin-left: 100px;
+    margin-left: 80px;
 }
 
 #par3{
-    font-family: Arial, Helvetica, sans-serif;
     color: grey;
-    margin-left: 100px;
+    margin-left: 80px;
 }
 
-table{
+#zero{
     margin-left: auto;
-margin-right: auto;
+    margin-right: auto;
+    
 }
+
+tbody {
+    vertical-align: text-top;   /* Pour que le texte dans les cases du tableau puisse remonter en haut de la case  */
+}
+
+#un{
+    height: 18%;
+    width:10%;
+    border-width:2px; 
+    border-style:solid; 
+    border-color:#e6007e;
+    display:inline-table;
+    border-collapse:collapse;
+    margin-left: 655px;
+}
+
+.pinkcase{
+    background-color: #e6007e;
+    background: linear-gradient(90deg, #fad8e9, #e6007e);
+    color: white;
+    text-align: center;
+}
+
+.underpink{
+    background-color: #fce9f3;
+    background: linear-gradient(90deg, white, #fce9f3);
+    color:#706f6f;
+}
+
+#deux{
+    height: 18%;
+    width:10%;
+    border-width:2px; 
+    border-style:solid; 
+    border-color:#c1d100;
+    display:inline-table;
+    border-collapse:collapse;
+    margin-left: 20px;
+}
+
+.greencase{
+    color: white;
+    background-color: #13a538;
+    background: linear-gradient(90deg, #c1d100, #13a538);
+    text-align: center;
+}
+
+.undergreen{
+    background-color:#dde56e;
+    background: linear-gradient(90deg, white, #dde56e);
+    color: #706f6f;
+}
+
+#trois{
+    height: 18%;
+    width:10%;
+    border-width:2px; 
+    border-style:solid; 
+    border-color:#009fe3;
+    display:inline-table;
+    border-collapse:collapse;
+    margin-left: 20px;
+}
+
+.bluecase{
+    color: white;
+    background-color: #009fe3;
+    background: linear-gradient(90deg, #9cd9f7, #009fe3);
+    text-align: center;
+}
+
+.underblue{
+    color:#706f6f;
+    background-color: #c2e7fa;
+    background: linear-gradient(90deg, white, #c2e7fa);
+}
+
+
 
