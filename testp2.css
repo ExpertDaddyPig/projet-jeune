@@ -1,0 +1,103 @@
+body{
+    margin:auto;
+
+    background-image: radial-gradient(white,#dddddd);
+}
+
+#title_band{
+    background-image: radial-gradient(white,#A9A9A9);
+    background: linear-gradient(90deg, rgba(169,169,169,1) 0%, rgba(255,255,255,1) 20%, rgba(169,169,169,1) 100%);
+    margin:auto;
+    text-align: left;
+}
+
+#title_band img{
+    height: 250px;
+    width: auto;
+}
+
+#imgpart{
+    text-align: center
+}
+
+#buttons{
+    background-image: radial-gradient(white,#A9A9A9);
+    background: linear-gradient(90deg, rgba(169,169,169,1) 0%, rgba(255,255,255,1) 20%, rgba(169,169,169,1) 100%);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 35%;
+    margin: auto;
+    
+}
+
+#buttons h2{
+    margin-left: 8px;
+    margin-right: 8px;
+    -webkit-touch-callout: none; /* iOS Safari */
+     -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+
+}
+
+
+#jeune{
+    color: rgb(229, 0, 126);
+    display: inline-block;
+}
+
+#referent{
+    color: rgb(43, 173, 76);
+    display: inline-block;
+}
+
+#consultant{
+    color: rgb(98, 184, 221);
+    display: inline-block;
+}
+
+#partenaires{
+    color: rgb(112, 112, 112);
+    display: inline-block;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#txt1{
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: right;
+    color: white;
+    margin-right: 50px;
+    display: block;
+}
+
+#par1{
+    
+    font-family: Arial, Helvetica, sans-serif;
+    color: grey;
+    margin-left: 100px;
+}
+
+#par2{ 
+    font-family: Arial, Helvetica, sans-serif;
+    color: grey;
+    margin-left: 100px;
+}
+
+#par3{
+    font-family: Arial, Helvetica, sans-serif;
+    color: grey;
+    margin-left: 100px;
+}
+
+table{
+    margin-left: auto;
+margin-right: auto;
+}
+
