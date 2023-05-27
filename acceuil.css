@@ -1,0 +1,76 @@
+img {
+    margin: auto;
+    width: auto;
+    height: auto;
+}
+
+html {
+    height: 100%;
+  }
+
+  body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(90deg, white, grey);
+    position: relative;
+}
+
+div#title_band {
+    display: block;
+    height: 75px;
+}
+
+#top_title{
+    padding-top: 115px;
+    color:#101f75;
+    font-size:42px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: bold;
+}
+
+#bottom_title{
+    margin-top: 15px;
+    color:#101f75;
+    font-size:25px;
+    text-align: center;
+}
+
+#jeune{
+    width: 30%;
+}
+
+#jeune2{
+    text-align: center;
+    margin-top: 10px;
+}
+
+#button_enter{
+    text-align: center;
+    margin-top:50px;
+}
+
+#enter{
+    width: 150px;
+    text-align: center;
+    background: none;
+    color: red;
+    font-size: 30px;
+    border: none;
+    transition: 0.5s;
+    
+}
+
+#enter:hover {
+    background-color: white;
+    border-radius: 15px;
+}
+
+#footer{
+    text-align: center;
+    color: grey ;
+    background-color: white;
+    position: absolute; bottom: 0; left: 0; right: 0
+}
