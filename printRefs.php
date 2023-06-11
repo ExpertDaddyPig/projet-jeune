@@ -6,16 +6,15 @@ if (sizeof($refs) !== 0) {
     foreach ($refs as $ref) {
         if ($col === 0) {
             echo '<tr>';
-            $col = $col + 1;
         }
         if ($col <= 2) {
-            echo '<td>'.$ref->engagement->title.'<br>'.$ref->engagement->desc;
+            echo '<td id="foundRef"><div id="foundRefTitle">'.$ref->engagement->title.'</div><br><div id="foundRefDesc">'.$ref->engagement->desc.'</div>';
             if ($ref->valid === true) {
-                echo '<br>Référence validée.';
+                echo '<br><div id="foundRefStatus">Référence validée. <span class="emotes">✅</span></div>';
             } else if ($ref->valid === false) {
-                echo '<br>Référence non validée.';
+                echo '<br><div id="foundRefStatus">Référence non validée. <span class="emotes">⛔</span></div>';
             } else {
-                echo '<br>Référence en cours de validation.';
+                echo '<br><div id="foundRefStatus">Référence en cours de validation.<span class="emotes">🔄</span></div>';
             }
             echo '</td>';
             $col = $col + 1;

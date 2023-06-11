@@ -4,6 +4,18 @@ let userList;
 let usernameNotValid = false;
 let emailNotValid = false;
 
+
+// Cache/Montre les informations du projet avec une animation.
+function showInfos() {
+    let div = document.getElementById("aboutInfos");
+    if (div.className.includes("hidden") || div.className.includes("fancyHidden")) {
+        document.getElementById("aboutInfos").className = "fancyShow";
+    } else {
+        document.getElementById("aboutInfos").className = "fancyHidden";
+    }
+}
+
+// Vérifie si le nom d'utilisateur donné lors de la modification de l'utilsateur, n'est pas déjà présent dans la base de données.
 function alreadyUsedUsername(username, oldUsername) {
     let found;
     userList.forEach(user => {
@@ -18,6 +30,7 @@ function alreadyUsedUsername(username, oldUsername) {
     }
 }
 
+// Vérifie si l'email donné lors de la modification de l'utilsateur, n'est pas déjà présent dans la base de données.
 function alreadyUsedEmail(email, oldEmail) {
     let found;
     userList.forEach(user => {
@@ -32,37 +45,47 @@ function alreadyUsedEmail(email, oldEmail) {
     }
 }
 
+// Cache/Montre le mot de passe lors de la connection/modification du profil.
 function reveal() {
     let type = document.getElementById("password").type;
     if (type === "password") {
         document.getElementById("password").type = "text";
+        document.getElementById("showButton").style.backgroundImage = "url(\"./logoprojetjeunes6_4/hide_pass.png\")"
     } else {
         document.getElementById("password").type = "password";
+        document.getElementById("showButton").style.backgroundImage = "url(\"./logoprojetjeunes6_4/show_pass.png\")"
     }
 }
 
+// Cache/Montre le mot de passe lors de la modification du profil.
 function revealOld() {
     let type = document.getElementById("oldPassword").type;
     if (type === "password") {
         document.getElementById("oldPassword").type = "text";
+        document.getElementById("showButton").style.backgroundImage = "url(\"./logoprojetjeunes6_4/hide_pass.png\")"
     } else {
         document.getElementById("oldPassword").type = "password";
+        document.getElementById("showButton").style.backgroundImage = "url(\"./logoprojetjeunes6_4/show_pass.png\")"
     }
 }
 
-function register() {
+// Alterne entre l'interface de connection et d'inscription sur la page auth.html
+function switchRegisterLogin() {
     let login = document.getElementById("login").className;
     if (login.includes("show")) {
         document.getElementById("login").classList = "hidden";
         document.getElementById("register").classList = "show";
-        document.getElementById("switch").value = "Login";
+        document.getElementById("switchButton").value = `Connectez-vous ici !`;
+        document.getElementById("switchText").innerText = `Vous êtes déjà inscrit ?`;
     } else {
         document.getElementById("login").classList = "show";
         document.getElementById("register").classList = "hidden";
-        document.getElementById("switch").value = "Register";
+        document.getElementById("switchButton").value = `Inscrivez-vous maintenant !`
+        document.getElementById("switchText").innerText = `Vous n'avez pas de compte?`;
     }
 }
 
+// Vérifie si l'adresse email est une adresse valide.
 function atCheck() {
     let emailInput = document.getElementById("email").value;
     if (emailInput.includes("@") && emailInput !== "") {
@@ -72,6 +95,7 @@ function atCheck() {
     }
 }
 
+// Vérifie si l'adresse email est une adresse valide lors de l'inscription.
 function atCheckRegister() {
     let emailInput = document.getElementById("email2").value;
     if (emailInput.includes("@") && emailInput !== "") {
@@ -81,6 +105,7 @@ function atCheckRegister() {
     }
 }
 
+// Ajoute l'utilisateur à la base de données après avoir vérifié s'il n'y avait aucun problème avec les données.
 function addUser() {
     atCheckRegister();
     if (notValid) return alert("Entrées erronées (check if email is true email)");
@@ -105,16 +130,13 @@ function addUser() {
     let birthMonth = document.getElementById("birthMonth").value;
     let birthYear = document.getElementById("birthYear").value;
     let pass = document.getElementById("password2").value;
-    let infos = { username: username, email: email, password: pass, prenom: firstName, nom: lastName, jour: birthDay, mois: birthMonth, annee: birthYear };
-    let object = JSON.stringify(infos);
-    xhttp.open("GET", "addUser.php?object=" + object);
-    if (xhttp.status !== 0) {
-        alert("weird thing happened");
-    } else {
-        xhttp.send();
-    }
+    let infos = { lastOnline: Date.now(), username: username, email: email, password: pass, prenom: firstName, nom: lastName, jour: birthDay, mois: birthMonth, annee: birthYear };
+    xhttp.open("GET", "addUser.php?object=" + JSON.stringify(infos));
+    xhttp.send();
+    window.location = `/jeune.html?query=${infos.username}`
 }
 
+// Récupère tout les utilisateurs présent dans la base de données.
 function getAllUsers() {
     const xhttp = new XMLHttpRequest()
     xhttp.open("GET", "getAllUsers.php");
@@ -126,13 +148,10 @@ function getAllUsers() {
             }
         }
     };
-    if (xhttp.status !== 0) {
-        alert("weird thing happened");
-    } else {
-        xhttp.send();
-    }
+    xhttp.send();
 }
 
+// Récupère l'utilisateur demandé dans la base de données.
 function getUser(user) {
     const xhttp = new XMLHttpRequest()
     let query = { username: user, email: user };
@@ -145,13 +164,10 @@ function getUser(user) {
             }
         }
     };
-    if (xhttp.status !== 0) {
-        alert("weird thing happened");
-    } else {
-        xhttp.send();
-    }
+    xhttp.send();
 }
 
+// Récupère la référence lié à l'utilisateur grâce à l'id de la référence et le nom d'utilisateur.
 function getRef(user, id) {
     const xhttp = new XMLHttpRequest()
     let query = { username: user, id: id };
@@ -162,53 +178,33 @@ function getRef(user, id) {
                 refRes = JSON.parse(this.responseText);
                 return;
             } else {
-                alert("Nobody found")
                 return;
             }
         }
     };
-    if (xhttp.status !== 0) {
-        alert("weird thing happened");
-    } else {
-        xhttp.send();
-    }
+    xhttp.send();
 }
 
+// Vérifie si les données de l'utilisateur correspondent avec celles présentes dans la base de données.
 function login() {
     let username = document.getElementById("username").value;
     let pass = document.getElementById("password").value;
-    getUser(username)
-    setTimeout(() => {
-        let user = userRes;
-        if (user === undefined) {
-            alert("No user found with that username : " + username);
-        } else if (user.password !== pass) {
-            alert("Wrong password")
-        } else {
-            window.location = `/jeune.html?query=${user.username}`
+    let user;
+    userList.forEach(found => {
+        if (found.username === username || found.email === username) {
+            user = found;
         }
-    }, 200)
-}
-
-
-function send() {
-    let user = document.getElementById("username").value;
+    })
     if (user === undefined) {
-        user = document.getElementById("email").value;
+        document.getElementById("loginError").className = "show";
+    } else if (user.password !== pass) {
+        document.getElementById("loginError").className = "show";
+    } else {
+        user.lastOnline = Date.now();
+        const xhttp = new XMLHttpRequest();
+        let query = user;
+        xhttp.open("GET", "modifyUser.php?query=" + JSON.stringify(query));
+        xhttp.send();
+        window.location = `/jeune.html?query=${user.username}`
     }
-    console.log(user)
-    getUser(user)
-    setTimeout(() => {
-        let user = userRes;
-        let message = document.getElementById("message").value;
-        let subject = document.getElementById("subject").value;
-        const xml = new XMLHttpRequest();
-        xml.onreadystatechange = function () {
-            if (this.readyState === 4 && this.status === 200) {
-                alert("Email sent to " + user.email)
-            }
-        }
-        xml.open("GET", "sendMail.php?msg=" + message + "&sbj=" + subject + "&email="+ user.email);
-        xml.send()
-    }, 200)
 }

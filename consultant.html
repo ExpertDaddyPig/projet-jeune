@@ -1,13 +1,108 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <title>JEUNES 6.4</title>
-        <script type="text/javascript" src="./script.js"></script>
-        <script type="text/javascript" src="./c_script.js"></script>
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <div id="userRef"></div>
-        <div id="confirmRef"></div>
-    </body>
+
+<head>
+    <title>JEUNES 6.4</title>
+    <script type="text/javascript" src="./script.js"></script>
+    <script type="text/javascript" src="./c_script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <img id="background" src="./logoprojetjeunes6_4/c-background.png">
+    <div id="title_band">
+        <img src="./logoprojetjeunes6_4/logo_jeunes_64.png">
+        <h1 id="consultantTitle">CONSULTANT<h1>
+    </div>
+    <div id="buttons">
+        <h2 id="jeune"><a href="./auth.html">JEUNE</a></h2>
+        <h2 id="referent">REFERENT</h2>
+        <h2 id="consultant" class="highlight">CONSULTANT</h2>
+        <h2 id="partenaires"><a href="./partenaire.html">PARTENAIRES</a></h2>
+    </div>
+    <div id="about" class="cons" onmouseleave="showInfos()" onmouseenter="showInfos()">À propos...</div>
+    <div id="aboutInfos" class="hidden">
+        <div id="arrow"></div>
+        <div id="infos">Le projet Jeunes 6.4 est un dispositif de valorisation de l'engagement des jeunes en
+            Pyrénées-Atlantiques soutenu par l'Etat, le Conseil Général, le Conseil Régional, les CAF Béarn Soule et
+            Pays
+            Basque, la MSA, la CPAM. Le projet, adressé aux jeunes entre 16 et 30 ans, vise à valoriser toute expérience
+            comme source d'enrichissement qui puisse être reconnue comme l'expression d'un savoir faire ou savoir être.
+        </div>
+    </div>
+    <div id="user">
+        <div id="refInfos-cons">
+            <table>
+                <tr>
+                    <td>
+                        <label class="newRefLabel" for="userLastName">NOM :</label>
+                        <input class="newRef readonly" readonly type="text" id="userLastName" name="userLastName"><br>
+                        <label class="newRefLabel" for="userFirstName">PRÉNOM :</label>
+                        <input class="newRef readonly" readonly type="text" id="userFirstName" name="userFirstName"><br>
+                        <label class="newRefLabel" for="userBirthDate">DATE DE NAISSANCE :</label>
+                        <input class="newRef readonly" readonly type="text" id="userBirthDate" name="userBirthDate"><br>
+                        <label class="newRefLabel" for="userEmail">MAIL :</label>
+                        <input class="newRef readonly" readonly type="text" id="userEmail" name="userEmail"><br>
+                        <label class="newRefLabel" for="userSocials">RÉSEAU SOCIAL :</label>
+                        <input class="newRef readonly" readonly type="text" id="userSocials" name="socials"><br>
+                        <label class="newRefLabel" for="userPlace">MILIEU DE L'ENGAGEMENT :</label>
+                        <input class="newRef readonly" readonly type="text" id="userPlace" name="place"><br>
+                        <label class="newRefLabel" for="userTitle">MON ENGAGEMENT :</label>
+                        <input class="newRef readonly" readonly type="text" id="userTitle" name="title"><br>
+                        <label class="newRefLabel" for="userDesc">DESCRIPTION DE L'ENGAGEMENT :</label>
+                        <textarea class="newRef readonly textarea" type="textarea" id="userDesc"
+                            name="desc"></textarea><br>
+                        <label class="newRefLabel" for="userTime">DURÉE DE L'ENGAGEMENT:</label>
+                        <input class="newRef readonly" readonly type="text" id="userTime" name="time"><br>
+                    </td>
+                    <td>
+                        <div id="se-div">
+                            <div id="seTitle-cons">MES SAVOIRS ÊTRE</div>
+                            <div id="seSubtitle-cons">Je suis*</div>
+                            <div id="se-cons"></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="ref">
+        <div id="checkRefInfos-cons">
+            <table>
+                <tr>
+                    <td>
+                        <label class="newRefLabel" for="refLastName">NOM :</label>
+                        <input class="checkRef readonly" readonly type="text" id="refLastName" name="refLastName"><br>
+                        <label class="newRefLabel" for="refFirstName">PRÉNOM :</label>
+                        <input class="checkRef readonly" type="text" id="refFirstName" name="refFirstName"><br>
+                        <label class="newRefLabel" for="refBirthDate">DATE DE NAISSANCE :</label>
+                        <input class="checkRef readonly" readonly type="text" id="refBirthDate" name="refBirthDate"><br>
+                        <label class="newRefLabel" for="refEmail">MAIL :</label>
+                        <input class="checkRef readonly" readonly type="text" id="refEmail" name="refEmail"><br>
+                        <label class="newRefLabel" for="refSocials">RÉSEAU SOCIAL :</label>
+                        <input class="checkRef readonly" readonly type="text" id="refSocials" name="socials"><br>
+                        <label class="newRefLabel" for="refPlace">MILIEU DE LA PRÉSENTATION :</label>
+                        <input class="checkRef readonly" readonly type="text" id="refPlace" name="place"><br>
+                        <label class="newRefLabel" for="refTitle">MA PRÉSENTATION :</label>
+                        <input class="checkRef readonly" readonly type="text" id="refTitle" name="title"><br>
+                        <label class="newRefLabel" for="refDesc">DESCRIPTION DE LA PRÉSENTATION :</label>
+                        <textarea class="checkRef readonly textarea" type="textarea" id="refDesc"
+                            name="desc"></textarea><br>
+                        <label class="newRefLabel" for="refTime">DURÉE DE LA PRÉSENTATION:</label>
+                        <input class="checkRef readonly" readonly type="text" id="refTime" name="time"><br>
+                    </td>
+                    <td>
+                        <div id="se-conf-div">
+                            <div id="se-confTitle-cons">SES SAVOIRS ÊTRE</div>
+                            <div id="se-confSubtitle-cons">Je confirme*</div>
+                            <div id="se-conf-cons"></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</body>
+
 </html>

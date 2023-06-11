@@ -14,7 +14,13 @@
     $object = json_decode($_GET["query"]);
     foreach ($users as $user) {
         $pos = $pos + 1;
-        if ($object->username === $user->username) {
+        if ($object->oldUsername === $user->username) {
+            $in = true;
+            break;
+        } else if ($object->oldEmail === $user->email) {
+            $in = true;
+            break;
+        } else if ($object->username === $user->username) {
             $in = true;
             break;
         } else if ($object->email === $user->email) {
@@ -23,6 +29,9 @@
         }
     }
     if ($in) {
+        if ($users[$pos]->lastOnline !== $object->lastOnline) {
+            $users[$pos]->lastOnline = $object->lastOnline;
+        }
         if ($users[$pos]->username !== $object->username) {
             $users[$pos]->username = $object->username;
         }

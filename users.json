@@ -1,107 +1,60 @@
 [
     {
-        "username": "amogus",
-        "email": "sus@gmail.com",
+        "lastOnline": 1686512192886,
+        "username": "ExpertDaddyPig",
+        "email": "gedeonmuyalaba@gmail.com",
         "password": "amogus",
-        "prenom": "Amogus",
-        "nom": "Sussy",
+        "prenom": "Percy",
+        "nom": "Pig",
         "jour": "1",
         "mois": "1",
         "annee": "1992",
-        "refs": []
-    },
-    {
-        "username": "amoooogus",
-        "email": "sussy@gmail.com",
-        "password": "amogus",
-        "prenom": "Amogus",
-        "nom": "Sussy",
-        "jour": "1",
-        "mois": "2",
-        "annee": "1992",
-        "refs": []
-    },
-    {
-        "username": "Baka",
-        "email": "sussybaka@gmail.com",
-        "password": "caca",
-        "prenom": "fdsqfdsq",
-        "nom": "fdsqfdsqfds",
-        "jour": "8",
-        "mois": "7",
-        "annee": "2001",
         "refs": [
             {
-                "id": "mpaijml1i4etios0qna7xqzb3z2aj53",
-                "userEmail": "sussybaka@gmail.com",
-                "userFirstName": "fdsqfdsq",
-                "userLastName": "fdsqfdsqfds",
-                "date": "8\/7\/2001",
-                "refFirstName": "The",
-                "refLastName": "Imposter",
+                "id": "iz3b90y4uxptoz5sbqh7xj2otc67k97y8",
+                "userEmail": "gedeonmuyalaba@gmail.com",
+                "userFirstName": "Percy",
+                "userLastName": "Pig",
+                "date": "1\/1\/1992",
+                "refFirstName": "G\u00e9d\u00e9on",
+                "refLastName": "Muya LABA",
                 "refEmail": "gedeonmuyalaba@gmail.com",
-                "socials": "twitter\/amogus",
+                "socials": "twitter\/amongus",
                 "place": "Polus",
                 "engagement": {
-                    "title": "Crewmate",
-                    "desc": "J'ai \u00e9t\u00e9 un crewmate exemplaire avec les crampt\u00e9s"
+                    "title": "EXEMPLE",
+                    "desc": "EXEMPLE",
+                    "time": "1 jour"
                 },
                 "se": [
                     "auto",
-                    "capable",
                     "ecoute",
-                    "patient"
+                    "patient",
+                    "resp"
                 ],
-                "valid": "pending",
-                "confirm": []
-            },
-            {
-                "id": "y3p29jupi77ngl8sdfd6isijf020ggze",
-                "userEmail": "sussybaka@gmail.com",
-                "userFirstName": "fdsqfdsq",
-                "userLastName": "fdsqfdsqfds",
-                "date": "8\/7\/2001",
-                "refFirstName": "The",
-                "refLastName": "Imposter",
-                "refEmail": "gedeonmuyalaba@gmail.com",
-                "socials": "twitter\/amogus",
-                "place": "Polus",
-                "engagement": {
-                    "title": "Crewmate",
-                    "desc": "J'ai \u00e9t\u00e9 un crewmate exemplaire avec les crampt\u00e9s"
-                },
-                "se": [
-                    "auto",
-                    "capable",
-                    "ecoute",
-                    "patient"
-                ],
-                "valid": "pending",
-                "confirm": []
-            },
-            {
-                "id": "gkyz07u6vwk01dn805hn7aqk022cf0b66k",
-                "userEmail": "sussybaka@gmail.com",
-                "userFirstName": "fdsqfdsq",
-                "userLastName": "fdsqfdsqfds",
-                "date": "8\/7\/2001",
-                "refFirstName": "The",
-                "refLastName": "Imposter",
-                "refEmail": "gedeonmuyalaba@gmail.com",
-                "socials": "twitter\/amogus",
-                "place": "Polus",
-                "engagement": {
-                    "title": "Crewmate",
-                    "desc": "J'ai \u00e9t\u00e9 un crewmate exemplaire avec les crampt\u00e9s"
-                },
-                "se": [
-                    "auto",
-                    "capable",
-                    "ecoute",
-                    "patient"
-                ],
-                "valid": "pending",
-                "confirm": []
+                "valid": true,
+                "confirm": [
+                    {
+                        "refEmail": "gedeonmuyalaba@gmail.com",
+                        "prenom": "G\u00e9d\u00e9on",
+                        "nom": "Muya LABA",
+                        "date": "1\/1\/1984",
+                        "socials": "twitter\/amongus",
+                        "place": "Polus",
+                        "engagement": {
+                            "title": "EXEMPLE",
+                            "desc": "EXEMPLE",
+                            "comm": "EXEMPLE",
+                            "time": "1 jour"
+                        },
+                        "se": [
+                            "conf",
+                            "honnete",
+                            "respect",
+                            "just"
+                        ]
+                    }
+                ]
             }
         ]
     }

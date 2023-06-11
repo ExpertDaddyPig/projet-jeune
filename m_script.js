@@ -1,6 +1,7 @@
 let user;
 let passNotValid = false;
 
+// Charge les données de l'utilisateur.
 window.onload = () => {
     getUser(window.location.search.split("=")[1]);
     getAllUsers();
@@ -10,9 +11,15 @@ window.onload = () => {
         document.getElementById("firstName").value = user.prenom;
         document.getElementById("lastName").value = user.nom;
         document.getElementById("email").value = user.email;
-    }, 200)
+    }, 1000)
 }
 
+// Redirige l'utilisateur vers la page de consulation des références.
+function goBackToJeune() {
+    window.location = `/jeune.html?query=${user.username}`
+}
+
+// Vérifie si le mot de passe est identique à l'ancien mot de passe.
 function passwordCheck() {
     let password = document.getElementById("oldPassword").value;
     if (password !== user.password) {
@@ -22,6 +29,7 @@ function passwordCheck() {
     }
 }
 
+// Modifie l'utilisateur avec les données modifiées.
 function modUser() {
     atCheck();
     if (notValid) return alert("Entrées erronées (entrez une adresse mail valide).");
@@ -44,20 +52,14 @@ function modUser() {
         if (this.readyState === 4 && this.status === 200) {
             if (this.responseText !== "") {
                 let user = JSON.parse(this.responseText)
-                alert("New user :" + user.username + " Email: " + user.email + " Password: " + user.password)
+                alert("Votre profil a bien été modifié.")
                 window.location = `/modif.html?query=${user.username}`;
             } else {
-                alert("Error while modifying")
-                return;
+                alert("Il y a eu une erreur lors de la modification de votre profil, veuillez réessayer plus tard.")
             }
         }
     };
-    let query = { username: username, email: email, password: pass, prenom: firstName, nom: lastName, jour: birthDay, mois: birthMonth, annee: birthYear, refs: userRes.refs };
+    let query = { oldUsername: user.username, oldEmail: user.email, lastOnline: Date.now(), username: username, email: email, password: pass, prenom: firstName, nom: lastName, jour: birthDay, mois: birthMonth, annee: birthYear, refs: userRes.refs };
     xhttp.open("GET", "modifyUser.php?query=" + JSON.stringify(query));
-    if (xhttp.status !== 0) {
-        alert("weird thing happened");
-    } else {
-        xhttp.send();
-    }
-
+    xhttp.send();
 }

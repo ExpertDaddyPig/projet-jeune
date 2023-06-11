@@ -22,7 +22,7 @@
     }
     if ($in) {
         array_push($users[$userPos]->refs, $object);
-        echo "\"".$users[$userPos]->refs[sizeof($users[$userPos]->refs) - 1]->engagement->title."\" added to ".$username."'s refs list";
+        echo "La référence \"".$users[$userPos]->refs[sizeof($users[$userPos]->refs) - 1]->engagement->title."\" a été ajoutée à votre liste de références.";
     }
     fwrite($file, json_encode($users, JSON_PRETTY_PRINT));
     fclose($file);

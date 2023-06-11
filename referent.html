@@ -1,24 +1,74 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <title>JEUNES 6.4</title>
-        <script type="text/javascript" src="./script.js"></script>
-        <script type="text/javascript" src="./r_script.js"></script>
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <div id="title_band">
-            <img src="./logoprojetjeunes6_4/logo_full.png">
-            <div id="jeu" class="inline">JEUNE</div>
-            <div id="con" class="inline">CONSULTANT</div>
-            <div id="ref" class="inline">REFERANT</div>
-            <div id="par" class="inline">PARTENAIRES</div><br>
-            <div id="sendRef">
-                Nom<br>
-                <input type="text" id="refLastName" name="refLastName"><br>
-                Prénom<br>
-                <input type="text" id="refFirstName" name="refFirstName"><br>
-                Date de naissance<br>
+
+<head>
+    <title>JEUNES 6.4</title>
+    <script type="text/javascript" src="./script.js"></script>
+    <script type="text/javascript" src="./r_script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <img id="background" src="./logoprojetjeunes6_4/r-background.png">
+    <div id="title_band">
+        <img src="./logoprojetjeunes6_4/logo_jeunes_64.png">
+        <h1 id="referentTitle">REFERENT<h1>
+    </div>
+    <div id="buttons">
+        <h2 id="jeune"><a href="./auth.html">JEUNE</a></h2>
+        <h2 id="referent" class="highlight">REFERENT</h2>
+        <h2 id="consultant">CONSULTANT</h2>
+        <h2 id="partenaires"><a href="./partenaire.html">PARTENAIRES</a></h2>
+    </div>
+    <div id="about" class="ref" onmouseleave="showInfos()" onmouseenter="showInfos()">À propos...</div>
+    <div id="aboutInfos" class="hidden">
+        <div id="arrow"></div>
+        <div id="infos">Le projet Jeunes 6.4 est un dispositif de valorisation de l'engagement des jeunes en
+        Pyrénées-Atlantiques soutenu par l'Etat, le Conseil Général, le Conseil Régional, les CAF Béarn Soule et Pays
+        Basque, la MSA, la CPAM. Le projet, adressé aux jeunes entre 16 et 30 ans, vise à valoriser toute expérience
+        comme source d'enrichissement qui puisse être reconnue comme l'expression d'un savoir faire ou savoir être.</div>
+    </div>
+    <input type="button" class="hidden" id="showRef" name="showRef" value="Consulter la référence" onclick="showRef()">
+    <div id="loadRefTitle">Chargement de la référence..</div>
+    <div id="jeuneRef" class="hidden">
+        <div id="j-arrow"></div>
+        <div id="refInfos" class="mini">
+            <label class="newRefLabel" for="userLastName">NOM :</label>
+            <input class="newRef mini" readonly type="text" id="userLastName" name="userLastName"><br>
+            <label class="newRefLabel" for="userFirstName">PRÉNOM :</label>
+            <input class="newRef mini" readonly type="text" id="userFirstName" name="userFirstName"><br>
+            <label class="newRefLabel" for="userBirthDate">DATE DE NAISSANCE :</label>
+            <input class="newRef mini" readonly type="text" id="userBirthDate" name="userBirthDate"><br>
+            <label class="newRefLabel" for="userEmail">MAIL :</label>
+            <input class="newRef mini" readonly type="text" id="userEmail" name="userEmail"><br>
+            <label class="newRefLabel" for="userSocials">RÉSEAU SOCIAL :</label>
+            <input class="newRef mini" readonly type="text" id="userSocials" name="socials"><br>
+            <label class="newRefLabel" for="userRefLastName">NOM DU RÉFÉRENT :</label>
+            <input class="newRef mini" type="text" id="userRefLastName" name="userRefLastName"><br>
+            <label class="newRefLabel" for="userRefFirstName">PRÉNOM DU RÉFÉRENT :</label>
+            <input class="newRef mini" type="text" id="userRefFirstName" name="userRefFirstName"><br>
+            <label class="newRefLabel" for="userRefEmail">MAIL DU RÉFÉRENT :</label>
+            <input class="newRef mini" type="text" id="userRefEmail" name="userRefEmail"><br>
+            <label class="newRefLabel" for="userPlace">MILIEU DE L'ENGAGEMENT :</label>
+            <input class="newRef mini" readonly type="text" id="userPlace" name="place"><br>
+            <label class="newRefLabel" for="userTitle">MON ENGAGEMENT :</label>
+            <input class="newRef mini" readonly type="text" id="userTitle" name="title"><br>
+            <label class="newRefLabel" for="userDesc">DESCRIPTION DE L'ENGAGEMENT :</label>
+            <textarea class="newRef minitextarea" type="textarea" id="userDesc" name="desc"></textarea><br>
+            <label class="newRefLabel" for="userTime">DURÉE DE L'ENGAGEMENT:</label>
+            <input class="newRef mini" readonly type="text" id="userTime" name="time"><br>
+        </div>
+    </div>
+    <div id="checkRef" class="hidden">
+        <div id="checkRefTitle">Confirmez cette expérience et ce que vous avez<br>pu constater au contact de ce jeune.
+        </div>
+        <div id="checkRefInfos">
+            <label class="newRefLabel" for="refLastName">NOM :</label>
+            <input class="checkRef" type="text" id="refLastName" name="refLastName"><br>
+            <label class="newRefLabel" for="refFirstName">PRÉNOM :</label>
+            <input class="checkRef" type="text" id="refFirstName" name="refFirstName"><br>
+            <fieldset class="labeltext">DATE DE NAISSANCE :<br>
+                <label for="refBirthDay">Jour :</label>
                 <select id="refBirthDay" name="refBirthDay">
                     <option value="1" selected>1</option>
                     <option value="2">2</option>
@@ -52,6 +102,7 @@
                     <option value="30">30</option>
                     <option value="31">31</option>
                 </select>
+                <label for="refBirthMonth">Mois :</label>
                 <select id="refBirthMonth" name="refBirthMonth">
                     <option value="1" selected>Janvier</option>
                     <option value="2">Fevrier</option>
@@ -66,42 +117,57 @@
                     <option value="11">Novembre</option>
                     <option value="12">Décembre</option>
                 </select>
+                <label for="refBirthYear">Année :</label>
                 <input type="text" id="refBirthYear" name="refBirthYear"><br>
-                Mail<br>
-                <input type="text" id="refEmail" name="refEmail"><br>
-                Reseau Social<br>
-                <input type="text" id="socials" name="socials"><br>
-                Milieu de la presentation<br>
-                <input type="text" id="place" name="place"><br>
-                Presentation<br>
-                <input type="text" id="title" name="title"><br>
-                Description de la présentation<br>
-                <input type="text" id="desc" name="desc"><br>
-                Ses savoirs être<br>
-                Je confirme ...<br>
-                <input class="confirmations" id="ponc" name="ponc" type="checkbox" value="Ponctualité">
-                <label for="ponc">Ponctualité</label><br>
-                <input class="confirmations" id="conf" name="conf" type="checkbox" value="Confiance">
-                <label for="conf">Confiance</label><br>
-                <input class="confirmations" id="seri" name="seri" type="checkbox" value="Sérieux">
-                <label for="seri">Sérieux</label><br>
-                <input class="confirmations" id="honnete" name="honnete" type="checkbox" value="Honnêteté">
-                <label for="honnete">Honnêteté</label><br>
-                <input class="confirmations" id="tolerant" name="tolerant" type="checkbox" value="Tolérant">
-                <label for="tolerant">Tolérant</label><br>
-                <input class="confirmations" id="bien" name="bien" type="checkbox" value="Bienveillance">
-                <label for="bien">Bienveillance</label><br>
-                <input class="confirmations" id="respect" name="respect" type="checkbox" value="Respect">
-                <label for="respect">Respect</label><br>
-                <input class="confirmations" id="just" name="just" type="checkbox" value="Juste">
-                <label for="just">Juste</label><br>
-                <input class="confirmations" id="imp" name="imp" type="checkbox" value="Impartial">
-                <label for="imp">Impartial</label><br>
-                <input class="confirmations" id="travail" name="travail" type="checkbox" value="Travail">
-                <label for="travail">Travail</label><br>
-                <input type="button" value="Confirmer la référence" onclick="modRef()">
-                <input type="button" value="Refuser la référence" onclick="cancelRef()">
-            </div>
+            </fieldset>
+            <label class="newRefLabel" for="refEmail">MAIL :</label>
+            <input class="checkRef" type="text" id="refEmail" name="refEmail"><br>
+            <label class="newRefLabel" for="refSocials">RÉSEAU SOCIAL :</label>
+            <input class="checkRef" type="text" id="refSocials" name="socials"><br>
+            <label class="newRefLabel" for="refPlace">MILIEU DE LA PRÉSENTATION :</label>
+            <input class="checkRef" type="text" id="refPlace" name="place"><br>
+            <label class="newRefLabel" for="refTitle">MA PRÉSENTATION :</label>
+            <input class="checkRef" type="text" id="refTitle" name="title"><br>
+            <label class="newRefLabel" for="refDesc">DESCRIPTION DE LA PRÉSENTATION :</label>
+            <textarea class="checkRef textarea" type="textarea" id="refDesc" name="desc"></textarea><br>
+            <label class="newRefLabel" for="time">DURÉE DE LA PRÉSENTATION:</label>
+            <input class="checkRef" type="text" id="refTime" name="time"><br>
         </div>
-    </body>
+        <div id="se-confTitle">SES SAVOIRS ÊTRE</div>
+        <div id="se-confSubtitle">Je confirme*</div>
+        <div id="se-conf">
+            <input class="confirmations" id="ponc" name="ponc" type="checkbox" value="Ponctualité">
+            <label for="ponc">Ponctualité</label><br>
+            <input class="confirmations" id="conf" name="conf" type="checkbox" value="Confiance">
+            <label for="conf">Confiance</label><br>
+            <input class="confirmations" id="seri" name="seri" type="checkbox" value="Sérieux">
+            <label for="seri">Sérieux</label><br>
+            <input class="confirmations" id="honnete" name="honnete" type="checkbox" value="Honnêteté">
+            <label for="honnete">Honnêteté</label><br>
+            <input class="confirmations" id="tolerant" name="tolerant" type="checkbox" value="Tolérant">
+            <label for="tolerant">Tolérant</label><br>
+            <input class="confirmations" id="bien" name="bien" type="checkbox" value="Bienveillance">
+            <label for="bien">Bienveillance</label><br>
+            <input class="confirmations" id="respect" name="respect" type="checkbox" value="Respect">
+            <label for="respect">Respect</label><br>
+            <input class="confirmations" id="just" name="just" type="checkbox" value="Juste">
+            <label for="just">Juste</label><br>
+            <input class="confirmations" id="imp" name="imp" type="checkbox" value="Impartial">
+            <label for="imp">Impartial</label><br>
+            <input class="confirmations" id="travail" name="travail" type="checkbox" value="Travail">
+            <label for="travail">Travail</label><br>
+        </div>
+        <div id="comments">
+            <div id="comments-title">COMMENTAIRES</div>
+            <textarea id="comment" name="comment"></textarea>
+        </div>
+        <input id="confirmRef" type="button" value="Confirmer la référence" onclick="modRef()">
+        <input id="refuseRef" type="button" value="Refuser la référence" onclick="cancelRef()">
+    </div>
+    <div id="confirmDiv" class="hidden">
+        <div id="confirmMessage"></div>
+    </div>
+    </div>
+</body>
+
 </html>

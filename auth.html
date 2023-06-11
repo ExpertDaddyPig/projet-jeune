@@ -1,39 +1,53 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Se Connecter - JEUNES 6.4</title>
-        <script type="text/javascript" src="./a_script.js"></script>
-        <script type="text/javascript" src="./script.js"></script>
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <div id="title_band">
-            <img src="./logoprojetjeunes6_4/logo_full.png">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Se Connecter - JEUNES 6.4</title>
+    <script type="text/javascript" src="./a_script.js"></script>
+    <script type="text/javascript" src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <img id="background" src="./logoprojetjeunes6_4/j-background.png">
+    <div id="title_band">
+        <img src="./logoprojetjeunes6_4/logo_jeunes_64.png">
+        <h1>SE CONNECTER</h1>
+    </div>
+    <div id="buttons">
+        <h2 id="jeune">JEUNE</h2>
+        <h2 id="referent">REFERENT</h2>
+        <h2 id="consultant">CONSULTANT</h2>
+        <h2 id="partenaires"><a href="./partenaire.html">PARTENAIRES</a></h2>
+    </div>
+    <div id="auth">
+        <div id="login" class="show">
+            <label class="labellogin labeltext" for="username">Nom d'utilisateur / Email :</label>
+            <input class="inputlogin usernameinput" type="text" id="username" name="username">
+            <label class="labellogin labeltext" for="password">Mot de passe :</label>
+            <input class="inputlogin password" type="password" id="password" name="password"><input id="showButton"
+                value="" type="button" onclick="reveal()">
+            <input id="loginButton" type="button" value="Se Connecter" onclick="login()">
+            <label id="loginError" class="hidden" for="loginButton">Nom d'utilisateur ou email inconnu / Mot de passe
+                erroné, veuillez réessayer.</label>
         </div>
-        <div id="auth">
-            <input type="button" id="switch" value="register" onclick="register()"><br>
-            <div id="login" class="show">
-                Username / Email:<br>
-                <input type="text" id="username" name="username"><br>
-                Mot De Passe<br>
-                <input type="password" id="password" name="password"><input type="button" value="reveal" onclick="reveal()"><br>
-                <input type="button" value="login" onclick="login()">
-            </div>
-            <div id="register" class="hidden">
-                Prenom<br>
-                <input type="text" id="firstName" name="firstName"><br>
-                Nom<br>
-                <input type="text" id="lastName" name="lastName"><br>
-                Username<br>
-                <input type="text" id="username2" name="username"><br>
-                Email<br>
-                <input type="text" id="email2" name="email" onchange="atCheckRegister()"><br>
-                Mot de passe<br>
-                <input type="password" id="password2" name="password"><input type="button" value="reveal" onclick="reveal()"><br>
-                Date de naissance:<br>
+        <div id="register" class="hidden">
+            <label class="labellogin labeltext" for="firstName">Prénom :</label>
+            <input class="inputlogin usernameinput" type="text" id="firstName" name="firstName">
+            <label class="labellogin labeltext" for="lastName">Nom :</label>
+            <input class="inputlogin usernameinput" type="text" id="lastName" name="lastName">
+            <label class="labellogin labeltext" for="username2">Nom d'utilisateur :</label>
+            <input class="inputlogin usernameinput" type="text" id="username2" name="username">
+            <label class="labellogin labeltext" for="email2">Email :</label>
+            <input class="inputlogin usernameinput" type="text" id="email2" name="email" onchange="atCheckRegister()">
+            <label class="labellogin labeltext" for="password2">Mot de passe :</label>
+            <input class="inputlogin password" type="password" id="password2" name="password"><input id="showButton"
+                value="" type="button" onclick="reveal()">
+            <fieldset class="labellogin labeltext">Date de naissance :<br>
+                <label for="birthDay">Jour :</label>
                 <select id="birthDay" name="birthDay">
                     <option value="1" selected>1</option>
                     <option value="2">2</option>
@@ -67,6 +81,7 @@
                     <option value="30">30</option>
                     <option value="31">31</option>
                 </select>
+                <label for="birthMonth">Mois :</label>
                 <select id="birthMonth" name="birthMonth">
                     <option value="1" selected>Janvier</option>
                     <option value="2">Fevrier</option>
@@ -80,8 +95,9 @@
                     <option value="10">Octobre</option>
                     <option value="11">Novembre</option>
                     <option value="12">Décembre</option>
-                  </select>
-                  <select id="birthYear" name="birthYear">
+                </select>
+                <label for="birthYear">Année :</label>
+                <select id="birthYear" name="birthYear">
                     <option value="1992" selected>1992</option>
                     <option value="1993">1993</option>
                     <option value="1994">1994</option>
@@ -97,9 +113,13 @@
                     <option value="2004">2004</option>
                     <option value="2005">2005</option>
                     <option value="2006">2006</option>
-                  </select><br>
-                <input type="button" value="Register" onclick="addUser()">
-            </div>
+                </select>
+            </fieldset>
+            <input id="registerButton" type="button" value="S'inscrire" onclick="addUser()">
         </div>
-    </body>
+    </div>
+    <div id="switch"><span id="switchText">Vous n'avez pas de compte?</span> <input type="button" id="switchButton"
+            onclick="switchRegisterLogin()" value="Inscrivez-vous maintenant !"></div>
+</body>
+
 </html>

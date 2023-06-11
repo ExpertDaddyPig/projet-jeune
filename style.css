@@ -1,3 +1,7 @@
+:focus-visible {
+    outline: none;
+}
+
 img {
     margin: auto;
     width: auto;
@@ -15,8 +19,61 @@ img {
 body {
     margin: auto;
     font-family: Arial, Helvetica, sans-serif;
-    background-image: radial-gradient(white, #dddddd);
+    background-image: radial-gradient(rgb(255, 255, 255), #dddddd);
     text-align: center
+}
+
+#top_title{
+    padding-top: 115px;
+    color:#101f75;
+    font-size:42px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#bottom_title{
+    margin-top: 15px;
+    color:#101f75;
+    font-size:25px;
+    text-align: center;
+}
+
+#jeune-img {
+    width: 30%;
+}
+
+#jeune2 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#button_enter {
+    text-align: center;
+    margin-top:50px;
+}
+
+#enter {
+    width: 150px;
+    text-align: center;
+    background: none;
+    color: red;
+    font-size: 30px;
+    border: none;
+    transition: 0.5s;
+    
+}
+
+#enter:hover {
+    background-color: white;
+    border-radius: 15px;
+}
+
+#footer {
+    text-align: center;
+    color: grey ;
+    background-color: white;
+    position: absolute; bottom: 0; left: 0; right: 0
 }
 
 #title_band {
@@ -26,26 +83,38 @@ body {
 }
 
 #title_band img {
-    height: 250px;
+    height: 200px;
     width: auto;
 }
 
 #title_band h1 {
     color: rgb(112, 112, 112);
-    font-size: 550%;
+    font-size: 450%;
     position: absolute;
     top: 0px;
     right: 16px;
+}
+
+#title_band h1.smallerFontSize {
+    font-size: 250%;
 }
 
 #jeuneTitle {
     color: rgb(229, 0, 126) !important;
 }
 
+#referentTitle {
+    color: rgb(43, 173, 76) !important;
+}
+
+#consultantTitle {
+    color: rgb(98, 184, 221) !important;
+}
+
 #buttons {
     background-image: linear-gradient(90deg, rgba(169, 169, 169, 1) 0%, rgba(255, 255, 255, 1) 20%, rgba(169, 169, 169, 1) 100%);
     text-align: center;
-    max-width: 40%;
+    max-width: 45%;
     margin: auto;
 }
 
@@ -70,6 +139,14 @@ body {
 
 #jeune {
     display: inline-block;
+    color: rgb(229, 0, 126);
+}
+
+#jeune.highlight {
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    padding: 0px 10px;
+    background-color: rgb(229, 0, 126);
 }
 
 #jeune a {
@@ -87,9 +164,23 @@ body {
     display: inline-block;
 }
 
+#referent.highlight {
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    padding: 0px 10px;
+    background-color: rgb(43, 173, 76);
+}
+
 #consultant {
     color: rgb(98, 184, 221);
     display: inline-block;
+}
+
+#consultant.highlight {
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    padding: 0px 10px;
+    background-color: rgb(98, 184, 221);
 }
 
 #partenaires {
@@ -101,20 +192,26 @@ body {
     padding-right: 8px;
 }
 
+#partenaires.highlight {
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    padding: 0px 10px;
+    background-color: rgb(112, 112, 112);
+}
 
 #text {
     margin-top: 20px;
 }
 
 #text img {
-    height: 450px;
+    height: 400px;
     width: auto;
 }
 
 #text div {
     text-align: left;
     color: rgb(112, 112, 112);
-    font-size: 175%;
+    font-size: 125%;
     margin-left: 25%;
     max-width: 50%;
 }
@@ -126,15 +223,99 @@ body {
 #modifUser {
     display: inline-block;
     position: absolute;
-    transform: translateX(210%) translateY(-145%);
-    border: solid #acacac 3px;
+    transform: translateY(-145%);
+    left: 76%;
+    border: solid rgb(229, 0, 126) 3px;
+    color: rgb(229, 0, 126);
     padding: 7px 45px;
-    border-radius: 5px;
+    border-radius: 10px;
     font-weight: bolder;
     font-size: large;
+    background-color: rgb(231, 181, 208);
 }
 
-label.newRef {
+#modifUser:hover {
+    padding: 7px 50px;
+    left: 75.7%;
+}
+
+#modifUser:active {
+    padding: 7px 45px;
+    left: 76%;
+}
+
+#goToLogin {
+    display: inline-block;
+    position: absolute;
+    transform: translateY(-145%);
+    left: 79%;
+    border: solid rgb(112, 112, 112) 3px;
+    color: rgb(112, 112, 112);
+    padding: 7px 45px;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: large;
+    background-color: rgb(197, 197, 197);
+    transition: 0.1s;
+}
+
+#goToLogin:hover {
+    padding: 7px 50px;
+    left: 78.7%;
+}
+
+#goToLogin:active {
+    padding: 7px 45px;
+    left: 79%;
+}
+
+#goBack {
+    display: inline-block;
+    position: absolute;
+    transform: translateY(-145%);
+    left: 79%;
+    border: solid rgb(229, 0, 126) 3px;
+    color: rgb(229, 0, 126);
+    padding: 7px 45px;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: large;
+    background-color: rgb(231, 181, 208);
+    transition: 0.1s;
+}
+
+#goBack:hover {
+    padding: 7px 50px;
+    left: 78.7%;
+}
+
+#goBack:active {
+    padding: 7px 45px;
+    left: 79%;
+}
+
+#showRef {
+    display: inline-block;
+    position: absolute;
+    transform: translateY(-145%);
+    top: 34%;
+    left: 76.3%;
+    border: solid rgb(43, 173, 76) 3px;
+    color: rgb(43, 173, 76);
+    padding: 7px 45px;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: large;
+    background-color: rgb(176, 241, 192);
+    transition: 0.1s;
+}
+
+#showRef:active {
+    padding: 7px 50px;
+    left: 76%;
+}
+
+label.refInfos {
     display: inline-block;
     min-width: 280px;
     margin: 3px;
@@ -143,29 +324,1070 @@ label.newRef {
     font-weight: bolder;
 }
 
-input.newRef {
-    display: inline-block;
-    border: solid 2px;
-    margin: 3px;
-    min-width: fit-content;
+#switchButton {
+    border: none;
+    background: none;
+    font-size: 17px;
+    text-decoration: underline;
+    color: rgb(229, 0, 126);
+    font-weight: 700;
 }
 
-div#newRef {
+#showButton {
+    background-image: url("./logoprojetjeunes6_4/show_pass.png");
+    background-size: cover;
+    width: 35px;
+    height: 32px;
     display: inline-block;
-    border: solid 2px rgb(229, 0, 126);
-    width: fit-content;
+    margin-top: -32px;
+    position: relative;
+    background-color: transparent;
+    top: 10.5px;
+    border: none;
+}
+
+#loginButton {
+    border-radius: 30px;
+    padding: 5px 30px;
+    border: solid rgb(229, 0, 126) 3px;
+    margin: 30px 0px 30px 43.3%;
+    font-size: larger;
+    font-weight: 800;
+    display: block;
+    color: rgb(229, 0, 126);
+    background-color: rgb(231, 181, 208);
+}
+
+#loginButton:hover {
+    padding: 5px 35px;
+    margin: 30px 0px 30px 43%;
+}
+
+#loginButton:active {
+    padding: 5px 30px;
+    margin: 30px 0px 30px 43.3%;
+}
+
+#modifButton {
+    border-radius: 20px;
+    padding: 5px 20px;
+    border: solid rgb(229, 0, 126) 3px;
+    margin: 10px 0px 30px 43.3%;
+    font-size: larger;
+    font-weight: 800;
+    display: block;
+    color: rgb(229, 0, 126);
+    background-color: rgb(231, 181, 208);
+}
+
+#modifButton:hover {
+    padding: 5px 25px;
+    margin: 10px 0px 30px 43%;
+}
+
+#modifButton:active {
+    padding: 5px 20px;
+    margin: 10px 0px 30px 43.3%;
+}
+
+#registerButton {
+    border-radius: 30px;
+    padding: 5px 30px;
+    border: solid rgb(229, 0, 126) 3px;
+    margin: 0px 0px 1% 44.3%;
+    font-size: larger;
+    font-weight: 800;
+    display: block;
+    color: rgb(229, 0, 126);
+    background-color: rgb(231, 181, 208);
+}
+
+#registerButton:hover {
+    padding: 5px 35px;
+    margin: 0px 0px 1% 44%;
+}
+
+#registerButton:active {
+    padding: 5px 30px;
+    margin: 0px 0px 1% 44.3%;
+}
+
+#login {
+    margin-top: 6%;
+}
+
+.labellogin {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.inputlogin {
+    border: solid rgb(229, 0, 126) 2px;
+    border-radius: 30px;
+    transition: 0.2s;
+    text-indent: 10px;
+    padding: 2px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.inputlogin:focus-visible {
+    outline: none;
+    padding: 2px 15px;
+}
+
+.password {
+    min-width: 200px;
+}
+
+.labeltext {
+    display: block !important;
+    padding: 15px 0px 9px 0px;
+}
+
+.usernameinput {
+    min-width: 236px;
+}
+
+#loginError {
+    color: rgb(255, 0, 0);
+    font-style: italic;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    margin-top: -22px;
+    margin-bottom: 22px;
+}
+
+fieldset {
+    border: none;
+    display: block;
+}
+
+#birthDay {
+    width: 50px;
+    padding: 5px 0px 5px 5px;
+    border: 1px solid rgb(229, 0, 126);
+    border-radius: 2px;
+    height: 34px;
+    display: inline-block;
+}
+
+#birthMonth {
+    width: 150px;
+    padding: 5px 35px 5px 5px;
+    border: 1px solid rgb(229, 0, 126);
+    border-radius: 2px;
+    height: 34px;
+    display: inline-block;
+}
+
+#birthYear {
+    width: 75px;
+    padding: 5px 0px 5px 5px;
+    border: 1px solid rgb(229, 0, 126);
+    border-radius: 2px;
+    height: 34px;
+    display: inline-block;
+}
+
+#pendingRefs {
+    text-align: left;
+}
+
+#refs {
     margin: auto;
-    padding-right: 40px;
-    background-color: #ffffff;
+    width: 50%;
+    margin-top: 10px;
 }
 
-div#se {
-    background-color: rgb(254, 224, 237);
+#validRefs {
+    margin: auto;
+    width: 50%;
+    margin-top: 10px;
+}
+
+#newRef {
+    position: absolute;
+    width: 100%;
+    top: 35%;
+}
+
+#checkRef {
+    position: absolute;
+    width: 100%;
+    top: 35%;
+}
+
+#createRef {
+    border: solid rgb(229, 0, 126) 3px;
+    color: rgb(229, 0, 126);
+    min-width: 204.5px;
+    padding: 3px 5px;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: medium;
+    background-color: rgb(231, 181, 208);
+    left: 0.5%;
+    top: 26%;
+    position: absolute;
+}
+
+#createRef:hover {
+    padding: 3px 10px;
+    left: 0.2%;
+}
+
+#createRef:active {
+    padding: 3px 5px;
+    left: 0.5%;
+}
+
+#sendRefs {
+    border: solid rgb(229, 0, 126) 3px;
+    color: rgb(229, 0, 126);
+    padding: 3px 5px;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: medium;
+    background-color: rgb(231, 181, 208);
+    left: 14.5%;
+    top: 26%;
+    position: absolute;
+}
+
+#sendRefs:hover {
+    padding: 3px 10px;
+    left: 14.2%;
+}
+
+#sendRefs:active {
+    padding: 3px 5px;
+    left: 14.5%;
+}
+
+#capable {
+    position: relative;
+    top: -10px;
+}
+
+label.capable {
+    width: 200px;
+    display: inline-block;
+}
+
+#refInfos {
+    position: absolute;
+    border: solid 1px rgb(229, 0, 126);
+    color: rgb(229, 0, 126);
+    width: fit-content;
+    font-size: 120%;
+    text-align: left;
+    margin: auto;
+    padding: 20px 40px 20px 40px;
+    left: 31%;
+    top: 220%;
+    background-color: rgb(255, 255, 255);
+}
+
+#refInfos.mini {
+    position: absolute;
+    border: solid 1px rgb(229, 0, 126);
+    color: rgb(229, 0, 126);
+    width: 20%;
+    font-size: 79%;
+    height: 327px;
+    text-align: left;
+    margin: auto;
+    padding: 20px 40px 20px 40px;
+    left: 42%;
+    top: 220%;
+    background-color: rgb(255, 255, 255);
+}
+
+#checkRefInfos {
+    position: absolute;
+    border: solid 1px rgb(43, 173, 76);
+    color: rgb(43, 173, 76);
+    width: fit-content;
+    font-size: 120%;
+    text-align: left;
+    margin: auto;
+    padding: 20px 40px 20px 40px;
+    left: 31%;
+    top: 120%;
+    background-color: rgb(255, 255, 255);
+}
+
+#refInfos-cons {
+    position: absolute;
+    border: solid 1px rgb(229, 0, 126);
+    color: rgb(229, 0, 126);
+    width: fit-content;
+    font-size: 100%;
+    text-align: left;
+    margin: auto;
+    padding: 20px 40px 20px 40px;
+    top: 120%;
+    background-color: rgb(255, 255, 255);
+}
+
+#checkRefInfos-cons {
+    position: absolute;
+    border: solid 1px rgb(43, 173, 76);
+    color: rgb(43, 173, 76);
+    width: fit-content;
+    font-size: 100%;
+    text-align: left;
+    margin: auto;
+    padding: 20px 40px 20px 40px;
+    top: 120%;
+    background-color: rgb(255, 255, 255);
+}
+
+#se {
+    background-color: rgb(237 162 195);
     background-image: linear-gradient(90deg, rgb(255, 255, 255) 10%, rgba(169, 169, 169, 0) 100%);
     text-align: left;
-    min-width: fit-content;
+    font-weight: 600;
+    width: 15%;
+    position: absolute;
     padding: 20px;
-    display:inline-block;
+    left: 80%;
+    top: 530%;
 }
 
-/**/
+#se-conf {
+    background-color: rgb(218 225 109);
+    background-image: linear-gradient(90deg, rgb(255, 255, 255) 10%, rgba(169, 169, 169, 0) 100%);
+    text-align: left;
+    font-weight: 600;
+    width: 14.95%;
+    position: absolute;
+    padding: 20px;
+    left: 80%;
+    top: 220%;
+}
+
+#seTitle {
+    color: rgb(229, 0, 126);
+    font-weight: 900;
+    position: absolute;
+    font-size: 20px;
+    width: 17.5%;
+    text-align: right;
+    left: 80%;
+    top: 290%;
+}
+
+#se-confTitle {
+    color: rgb(43, 173, 76);
+    font-weight: 900;
+    position: absolute;
+    font-size: 20px;
+    width: 17.5%;
+    text-align: right;
+    left: 80%;
+    top: 100%;
+}
+
+#se-cons {
+    background-color: rgb(237 162 195);
+    background-image: linear-gradient(90deg, rgb(255, 255, 255) 10%, rgba(169, 169, 169, 0) 100%);
+    text-align: left;
+    font-weight: 600;
+    width: 100%;
+    padding: 20px 1px 20px 10px;
+}
+
+#se-conf-cons {
+    background-color: rgb(218 225 109);
+    background-image: linear-gradient(90deg, rgb(255, 255, 255) 10%, rgba(169, 169, 169, 0) 100%);
+    text-align: left;
+    font-weight: 600;
+    width: 100%;
+    padding: 20px 1px 20px 10px;
+}
+
+#seTitle-cons {
+    color: rgb(229, 0, 126);
+    font-weight: 900;
+    font-size: 15px;
+    width: 100%;
+    padding-left: 10px;
+    text-align: right;
+}
+
+#se-confTitle-cons {
+    color: rgb(43, 173, 76);
+    font-weight: 900;
+    font-size: 15px;
+    width: 100%;
+    padding-left: 10px;
+    text-align: right;
+}
+
+#checkRefTitle,
+#loadRefTitle {
+    color: rgb(43, 173, 76);
+    font-size: 19px;
+    text-align: center;
+    display: block;
+    font-style: italic;
+    width: 100%;
+}
+
+div#refTitle {
+    color: rgb(229, 0, 126);
+    font-size: 19px;
+    text-align: center;
+    display: block;
+    font-style: italic;
+    width: 100%;
+}
+
+#seSubtitle {
+    position: absolute;
+    background-color: rgb(229, 0, 126);
+    background-image: linear-gradient(90deg, rgb(255, 255, 255) 10%, rgba(169, 169, 169, 0) 100%);
+    width: 16.8%;
+    font-size: x-large;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    padding-right: 11px;
+    text-align: right;
+    left: 80%;
+    top: 406%;
+}
+
+#se-confSubtitle {
+    position: absolute;
+    background-color: rgb(43, 173, 76);
+    background-image: linear-gradient(90deg, rgb(218 225 109) 0%, rgba(169, 169, 169, 0) 30%);
+    width: 16.8%;
+    font-size: x-large;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    padding-right: 11px;
+    text-align: right;
+    left: 80%;
+    top: 155%;
+}
+
+#seSubtitle-cons {
+    background-color: rgb(229, 0, 126);
+    background-image: linear-gradient(90deg, rgb(255, 255, 255) 10%, rgba(169, 169, 169, 0) 100%);
+    width: 100%;
+    font-size: large;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    padding-right: 11px;
+    text-align: right;
+}
+
+#se-confSubtitle-cons {
+    background-color: rgb(43, 173, 76);
+    background-image: linear-gradient(90deg, rgb(218 225 109) 0%, rgba(169, 169, 169, 0) 30%);
+    width: 100%;
+    font-size: large;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    padding-right: 11px;
+    text-align: right;
+}
+
+#submitRef {
+    padding: 5px 30px;
+    font-size: small;
+    border: none;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+    background-color: rgb(229, 0, 126);
+    position: absolute;
+    left: 82%;
+    top: 1900%;
+}
+
+#confirmRef {
+    padding: 5px 15px;
+    font-size: small;
+    border: none;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+    background-color: rgb(43, 173, 76);
+    position: absolute;
+    left: 73%;
+    top: 900%;
+    transition: 0.1s;
+}
+
+#refuseRef {
+    padding: 5px 15px;
+    font-size: small;
+    border: none;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+    background-color: rgb(229, 0, 0);
+    position: absolute;
+    left: 86%;
+    top: 900%;
+    transition: 0.1s;
+}
+
+#refuseRef:active {
+    padding: 5px 20px;
+    left: 85.7%;
+}
+
+#confirmRef:active {
+    padding: 5px 20px;
+    left: 72.7%;
+}
+
+#comments {
+    position: absolute;
+    left: 3%;
+    width: 20%;
+    top: 160%;
+}
+
+#comments-title {
+    background-color: rgb(218 225 109);
+    padding: 5px;
+    font-weight: 700;
+    font-size: 150%;
+    color: rgb(255, 255, 255);
+    text-align: right;
+}
+
+#comment {
+    background-color: rgb(220 226 116);
+    background-image: radial-gradient(rgb(255, 255, 255), rgb(220 227 118));
+    height: 300px;
+    width: 78%;
+    border: none;
+    font-family: arial;
+    font-size: 125%;
+    font-weight: 500;
+    padding: 15px 35px;
+}
+
+
+#comments-cons {
+    width: 100%;
+}
+
+#comment-cons {
+    background-color: rgb(220 226 116);
+    background-image: radial-gradient(rgb(255, 255, 255), rgb(220 227 118));
+    height: 100px;
+    width: 78%;
+    border: none;
+    font-family: arial;
+    font-size: 100%;
+    font-weight: 500;
+    padding: 15px 35px;
+}
+
+.newRefLabel {
+    font-weight: 400;
+}
+
+.newRef {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: dotted 0.5px;
+    border-color: rgb(229, 0, 126) !important;
+    font-size: medium;
+}
+
+.newRef.mini {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: dotted 0.5px;
+    border-color: rgb(229, 0, 126) !important;
+    font-size: small;
+}
+
+.checkRef {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: dotted 0.5px;
+    border-color: rgb(43, 173, 76) !important;
+    font-size: medium;
+}
+
+.validRefs {
+    display: inline-block;
+    width: 25%;
+    height: 30px;
+}
+
+.validRefLabel {
+    height: fit-content;
+    display: inline-block;
+    width: 70%;
+}
+
+.textarea {
+    border: solid 0.5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.minitextarea {
+    border: solid 0.5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+}
+
+.savoirs:checked,
+.validRefs:checked {
+    accent-color: rgb(229, 0, 126);
+}
+
+.confirmations:checked {
+    accent-color: rgb(43, 173, 76);
+}
+
+#userLastName {
+    width: 84.7%;
+}
+
+#userFirstName {
+    width: 77%;
+}
+
+#userBirthDate {
+    width: 54.4%;
+}
+
+#userEmail {
+    width: 84.7%;
+}
+
+#socials,
+#userSocials {
+    width: 63%;
+}
+
+#refSocials {
+    width: 67.8%;
+}
+
+#refLastName,
+#userRefLastName {
+    width: 56.6%;
+}
+
+#refLastName.checkRef {
+    width: 88%;
+}
+
+#refFirstName,
+#userRefFirstName {
+    width: 48.7%;
+}
+
+#refFirstName.checkRef {
+    width: 80.7%;
+}
+
+#refEmail,
+#userRefEmail {
+    width: 56.7%;
+}
+
+#refEmail.checkRef {
+    width: 88.1%;
+}
+
+#place,
+#userPlace {
+    width: 43.4%;
+}
+
+#refPlace {
+    width: 45.4%;
+}
+
+#title,
+#userTitle {
+    width: 56.4%;
+}
+
+#refTitle.checkRef {
+    width: 63.1%;
+}
+
+#desc,
+#refDesc,
+#userDesc {
+    width: 96.4%;
+    min-height: 70px;
+}
+
+#refDesc {
+    width: 98.8%;
+    min-height: 70px;
+}
+
+#time {
+    width: 44%;
+}
+
+#refTime {
+    width: 45.8%;
+}
+
+#foundRef {
+    border: solid rgb(229, 0, 126) 2px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(231, 181, 208) 70%, rgb(231, 181, 208) 100%);
+    color: rgb(229, 0, 126);
+    margin: 10px;
+    width: 375px;
+    max-width: 375px;
+}
+
+#validRef {
+    border: solid rgb(229, 0, 126) 2px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(231, 181, 208) 70%, rgb(231, 181, 208) 100%);
+    color: rgb(229, 0, 126);
+    margin: 10px;
+    width: 375px;
+    max-width: 375px;
+    max-height: 100px;
+}
+
+#foundRefTitle {
+    font-size: 150%;
+    font-weight: 600;
+    text-decoration: underline;
+    text-align: left;
+    text-indent: 12.5%;
+}
+
+#validRefTitle {
+    font-size: 150%;
+    font-weight: 600;
+    text-decoration: underline;
+    text-align: left;
+    text-indent: 4.5%;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+
+#foundRefDesc,
+#validRefDesc {
+    width: 90%;
+    min-height: 50px;
+    font-size: 80%;
+    text-indent: 20px;
+    text-align: justify;
+    font-weight: bolder;
+}
+
+#foundRefStatus {
+    font-size: 80%;
+    text-align: left;
+    text-indent: 10px;
+    font-style: italic;
+    font-weight: 800;
+    padding-top: 5px;
+}
+
+.emotes {
+    font-style: normal;
+}
+
+#pendingMessage,
+#empty {
+    width: 50%;
+    margin: auto;
+    padding-top: 20px;
+    font-size: 125%;
+    font-weight: 600;
+    font-style: italic;
+    text-align: center;
+    color: rgb(229, 0, 126);
+}
+
+#background {
+    position: fixed;
+    width: 50%;
+    left: 27%;
+    top: 35%;
+    z-index: -30;
+}
+
+#jeuneRef {
+    position: relative;
+    left: 30.5%;
+    z-index: 1;
+}
+
+.fancyHidden {
+    animation: opacityOff 0.2s normal forwards;
+}
+
+.fancyShow {
+    animation: opacityOn 0.2s normal forwards;
+}
+
+@keyframes opacityOn {
+    0% {
+        opacity: 0;
+        z-index: 0;
+    }
+
+    100% {
+        opacity: 1;
+        z-index: 1;
+    }
+}
+
+@keyframes opacityOff {
+    0% {
+        opacity: 1;
+        z-index: 1;
+
+    }
+
+    100% {
+        opacity: 0;
+        z-index: 0;
+    }
+}
+
+#j-arrow {
+    width: 25.125%;
+    left: 42%;
+    height: 20px;
+    position: absolute;
+    top: -20px;
+    background-image: linear-gradient(0deg, rgb(229 0 126) 0%, rgb(43 173 76) 100%);
+    clip-path: polygon(50% -30%, 110% 100%, -10% 100%);
+}
+
+#consMailInput {
+    position: absolute;
+    left: 80%;
+    top: 40%;
+}
+
+#consEmail:focus-visible {
+    padding: 5px 10px;
+}
+
+#sendToCons {
+    padding: 5px 15px;
+    font-size: small;
+    border: none;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+    background-color: rgb(229 0 126);
+    position: absolute;
+    left: -7%;
+    top: 120%;
+    transition: 0.1s;
+}
+
+#sendToCons:active {
+    padding: 5px 20px;
+    left: -8.3%;
+}
+
+#confirmDiv {
+    width: 50%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+}
+
+#confirmMessage {
+    color: rgb(43, 173, 76);
+    font-size: 19px;
+    text-align: center;
+    font-style: italic;
+}
+
+#par1 {
+    color: rgb(128, 128, 128);
+    margin-left: 45px;
+}
+
+#par2 {
+    color: rgb(128, 128, 128);
+    margin-left: 80px;
+}
+
+#par3 {
+    color: rgb(128, 128, 128);
+    margin-left: 80px;
+}
+
+#zero {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 95%;
+}
+
+tbody {
+    vertical-align: text-top;
+    /* Pour que le texte dans les cases du tableau puisse remonter en haut de la case  */
+}
+
+#un {
+    height: 18%;
+    width: 10%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(230, 0, 126);
+    display: inline-table;
+    border-collapse: collapse;
+}
+
+.pinkcase {
+    background-color: rgb(230, 0, 126);
+    background: linear-gradient(90deg, rgb(250, 216, 233), rgb(230, 0, 126));
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.underpink {
+    background-color: rgb(252, 233, 243);
+    background: linear-gradient(90deg, rgb(255, 255, 255), rgb(252, 233, 243));
+    color: rgb(112, 111, 111);
+}
+
+#deux {
+    height: 18%;
+    width: 10%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(193, 209, 0);
+    display: inline-table;
+    border-collapse: collapse;
+    margin-left: 20px;
+}
+
+.greencase {
+    color: rgb(255, 255, 255);
+    background-color: rgb(19, 165, 56);
+    background: linear-gradient(90deg, rgb(193, 209, 0), rgb(19, 165, 56));
+    text-align: center;
+}
+
+.undergreen {
+    background-color: rgb(221, 229, 110);
+    background: linear-gradient(90deg, rgb(255, 255, 255), rgb(221, 229, 110));
+    color: rgb(112, 111, 111);
+}
+
+#trois {
+    height: 18%;
+    width: 10%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(0, 159, 227);
+    display: inline-table;
+    border-collapse: collapse;
+    margin-left: 20px;
+}
+
+.bluecase {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 161, 230);
+    background: linear-gradient(90deg, rgb(156, 217, 247), rgb(0, 159, 227));
+    text-align: center;
+}
+
+.underblue {
+    color: rgb(112, 111, 111);
+    background-color: rgb(194, 231, 250);
+    background: linear-gradient(90deg, rgb(255, 255, 255), rgb(194, 231, 250));
+}
+
+#arrow {
+    width: 30px;
+    left: 46%;
+    height: 10px;
+    position: absolute;
+    top: -10%;
+    background-color: rgb(255 255 255);
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+#about {
+    font-weight: 600;
+    position: absolute;
+    top: 27%;
+    left: 10%;
+}
+
+#about.ref {
+    color: rgb(19, 165, 56);
+}
+
+#about.cons {
+    color: rgb(0, 159, 227);
+}
+
+#aboutInfos {
+    background-color: rgb(255, 255, 255);
+    width: 20%;
+    padding: 10px;
+    font-size: 70%;
+    left: 2.1%;
+    position: absolute;
+    top: 30.5%;
+    border-radius: 20px;
+}
+
+#ref {
+    position: absolute;
+    width: 48.5%;
+    left: 50.5%;
+    top: 42.5%;
+}
+
+#user {
+    position: absolute;
+    width: 50.5%;
+    left: 0.5%;
+    top: 45%;
+}
+
+
+.newRef.readonly {
+    max-width: 270px !important;
+    border: none;
+}
+
+.checkRef.readonly {
+    max-width: 270px !important;
+    border: none;
+}
+
+.newRef.readonly.textarea {
+    max-width: 270px !important;
+    border: solid 0.5px;
+}
+
+.checkRef.readonlytextarea {
+    max-width: 270px !important;
+    border: solid 0.5px;
+}

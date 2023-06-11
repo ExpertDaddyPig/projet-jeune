@@ -24,8 +24,8 @@
     }
     $found = false;
     if ($userPos !== -1) {
-        $refPos = $refPos + 1;
         foreach ($users[$userPos]->refs as $ref) {
+            $refPos = $refPos + 1;
             if ($query->id === $ref->id) {
                 $found = true;
                 break;
